@@ -3,7 +3,13 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
+import { Layout } from "@/components/Layout";
+import { HomePage } from "@/pages/HomePage";
+import { AboutPage } from "@/pages/AboutPage";
+import { ServicesPage } from "@/pages/ServicesPage";
+import { ContactPage } from "@/pages/ContactPage";
+import { PrivacyPage } from "@/pages/PrivacyPage";
+import { TermsPage } from "@/pages/TermsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -15,8 +21,37 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          {/* Hebrew Routes (default) */}
+          <Route element={<Layout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+          </Route>
+
+          {/* English Routes */}
+          <Route element={<Layout />}>
+            <Route path="/en" element={<HomePage />} />
+            <Route path="/en/about" element={<AboutPage />} />
+            <Route path="/en/services" element={<ServicesPage />} />
+            <Route path="/en/contact" element={<ContactPage />} />
+            <Route path="/en/privacy" element={<PrivacyPage />} />
+            <Route path="/en/terms" element={<TermsPage />} />
+          </Route>
+
+          {/* Russian Routes */}
+          <Route element={<Layout />}>
+            <Route path="/ru" element={<HomePage />} />
+            <Route path="/ru/about" element={<AboutPage />} />
+            <Route path="/ru/services" element={<ServicesPage />} />
+            <Route path="/ru/contact" element={<ContactPage />} />
+            <Route path="/ru/privacy" element={<PrivacyPage />} />
+            <Route path="/ru/terms" element={<TermsPage />} />
+          </Route>
+
+          {/* Catch-all */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
