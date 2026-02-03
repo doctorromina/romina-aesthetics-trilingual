@@ -1,0 +1,120 @@
+import { Link } from 'react-router-dom';
+import { Instagram } from 'lucide-react';
+import { useLocale } from '@/contexts/LocaleContext';
+import { LogoWithTagline } from './Logo';
+import { LtrWrapper } from './LocalizedText';
+
+export function Footer() {
+  const { t, getPath, locale } = useLocale();
+  
+  const quickLinks = [
+    { href: getPath('/'), label: t.nav.home },
+    { href: getPath('/about'), label: t.nav.about },
+    { href: getPath('/services'), label: t.nav.services },
+    { href: getPath('/contact'), label: t.nav.contact },
+  ];
+
+  const legalLinks = [
+    { href: getPath('/privacy'), label: t.footer.privacy },
+    { href: getPath('/terms'), label: t.footer.terms },
+  ];
+
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-muted/30 border-t border-border">
+      {/* Main Footer */}
+      <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {/* Logo & Social */}
+          <div className="lg:col-span-1">
+            <LogoWithTagline />
+            <div className="mt-6 flex justify-center md:justify-start">
+              <a
+                href="https://instagram.com/doctor_romina"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram size={20} className="text-primary" />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="text-center md:text-start">
+            <h4 className="font-heading text-lg font-semibold text-primary mb-4">
+              {t.footer.quickLinks}
+            </h4>
+            <ul className="space-y-2">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    to={link.href}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="text-center md:text-start">
+            <h4 className="font-heading text-lg font-semibold text-primary mb-4">
+              {t.footer.contact}
+            </h4>
+            <ul className="space-y-2 text-muted-foreground">
+              <li>
+                <LtrWrapper>info@drromina.com</LtrWrapper>
+              </li>
+              <li>
+                <LtrWrapper>+972-5X-XXX-XXXX</LtrWrapper>
+              </li>
+              <li>{t.contact.info.hoursValue}</li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div className="text-center md:text-start">
+            <h4 className="font-heading text-lg font-semibold text-primary mb-4">
+              {t.footer.legal}
+            </h4>
+            <ul className="space-y-2">
+              {legalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    to={link.href}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Disclaimer */}
+      <div className="border-t border-border">
+        <div className="container mx-auto px-4 md:px-6 py-6">
+          <p className="text-xs text-muted-foreground text-center max-w-3xl mx-auto">
+            {t.footer.disclaimer}
+          </p>
+        </div>
+      </div>
+
+      {/* Copyright */}
+      <div className="border-t border-border bg-muted/50">
+        <div className="container mx-auto px-4 md:px-6 py-4">
+          <p className="text-xs text-muted-foreground text-center">
+            {currentYear} {t.footer.copyright}
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
