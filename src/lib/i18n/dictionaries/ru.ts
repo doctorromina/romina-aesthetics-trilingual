@@ -12,7 +12,7 @@ export const ru = {
   hero: {
     tagline: 'FACE&SMILE AESTHETICS',
     headline: 'Твоё лицо. Не тренд.',
-    subheadline: 'Естественная инъекционная эстетика от Dr. Romina',
+    subheadline: 'Инъекционная эстетика с естественным результатом',
     cta: 'Записаться на консультацию',
   },
   about: {
