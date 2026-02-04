@@ -1,6 +1,11 @@
-import { MapPin, Navigation } from 'lucide-react';
+import { MapPin, Navigation, Map } from 'lucide-react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { Button } from '@/components/ui/button';
+
+// Generate Waze URL from address
+function getWazeUrl(address: string): string {
+  return `https://waze.com/ul?q=${encodeURIComponent(address)}`;
+}
 
 export function LocationsSection() {
   const { t } = useLocale();
@@ -38,17 +43,30 @@ export function LocationsSection() {
                 {location.details}
               </p>
 
-              <Button
-                asChild
-                variant="outline"
-                size="sm"
-                className="w-full"
-              >
-                <a href={location.mapsUrl} target="_blank" rel="noopener noreferrer">
-                  <Navigation size={16} className="me-2" />
-                  <span>{t.locations.getDirections}</span>
-                </a>
-              </Button>
+              <div className="flex gap-2">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="sm"
+                  className="flex-1"
+                >
+                  <a href={location.mapsUrl} target="_blank" rel="noopener noreferrer">
+                    <Map size={16} className="me-1" />
+                    <span>Google</span>
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="sm"
+                  className="flex-1"
+                >
+                  <a href={getWazeUrl(location.address)} target="_blank" rel="noopener noreferrer">
+                    <Navigation size={16} className="me-1" />
+                    <span>Waze</span>
+                  </a>
+                </Button>
+              </div>
             </div>
           ))}
         </div>
