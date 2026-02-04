@@ -4,6 +4,7 @@ import { AboutPreview } from '@/components/home/AboutPreview';
 import { ServicesPreview } from '@/components/home/ServicesPreview';
 import { PhilosophySection } from '@/components/home/PhilosophySection';
 import { InstagramSection } from '@/components/home/InstagramSection';
+import { TelegramSection } from '@/components/home/TelegramSection';
 import { LocationsSection } from '@/components/home/LocationsSection';
 
 export function HomePage() {
@@ -18,6 +19,7 @@ export function HomePage() {
       <AboutPreview />
       <ServicesPreview />
       <PhilosophySection />
+      <TelegramSection />
       <InstagramSection />
       <LocationsSection />
     </>

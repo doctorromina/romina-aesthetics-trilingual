@@ -1,25 +1,25 @@
 import { Link } from 'react-router-dom';
-import { Syringe, Droplets, Zap, Sparkles, ArrowRight, ArrowLeft } from 'lucide-react';
+import { Syringe, Sparkles, Zap, Atom, ArrowRight, ArrowLeft } from 'lucide-react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { Button } from '@/components/ui/button';
 
 const serviceIcons = {
   botox: Syringe,
-  fillers: Droplets,
+  fillers: Sparkles,
+  collagen: Atom,
   ultraformer: Zap,
-  skinboosters: Sparkles,
 };
 
 export function ServicesPreview() {
-  const { t, getPath, dir, locale } = useLocale();
+  const { t, getPath, dir } = useLocale();
   
   const Arrow = dir === 'rtl' ? ArrowLeft : ArrowRight;
 
   const services = [
     { key: 'botox' as const, anchor: 'botox' },
     { key: 'fillers' as const, anchor: 'fillers' },
+    { key: 'collagen' as const, anchor: 'collagen' },
     { key: 'ultraformer' as const, anchor: 'ultraformer' },
-    { key: 'skinboosters' as const, anchor: 'skinboosters' },
   ];
 
   const getServicePath = (anchor: string) => {

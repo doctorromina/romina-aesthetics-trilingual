@@ -1,6 +1,5 @@
-import { MapPin, MessageCircle } from 'lucide-react';
+import { MapPin, MessageCircle, Navigation, Map } from 'lucide-react';
 import { useLocale } from '@/contexts/LocaleContext';
-import { LtrWrapper } from '@/components/LocalizedText';
 import { Button } from '@/components/ui/button';
 
 export function LocationsSection() {
@@ -17,28 +16,58 @@ export function LocationsSection() {
         </div>
 
         {/* Location Cards */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {t.locations.items.map((location, index) => (
             <div 
               key={index}
-              className="bg-muted/30 rounded-2xl p-6 text-center hover:bg-muted/50 transition-colors"
+              className="bg-muted/30 rounded-2xl p-6 hover:bg-muted/50 transition-colors"
             >
               <div className="w-12 h-12 rounded-full bg-secondary/50 flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-6 h-6 text-primary" />
               </div>
               
-              <h3 className="text-lg font-heading font-semibold text-primary mb-2">
+              <h3 className="text-lg font-heading font-semibold text-primary mb-2 text-center">
                 {location.name}
               </h3>
               
-              <p className="text-sm text-muted-foreground mb-4">
+              <p className="text-sm text-muted-foreground mb-1 text-center">
                 {location.address}
               </p>
+              
+              <p className="text-xs text-muted-foreground/80 mb-4 text-center">
+                {location.details}
+              </p>
+
+              {/* Navigation buttons */}
+              <div className="flex gap-2 mb-4">
+                <Button
+                  asChild
+                  size="sm"
+                  variant="outline"
+                  className="flex-1 text-xs"
+                >
+                  <a href={location.wazeUrl} target="_blank" rel="noopener noreferrer">
+                    <Navigation size={14} className="me-1" />
+                    Waze
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  size="sm"
+                  variant="outline"
+                  className="flex-1 text-xs"
+                >
+                  <a href={location.mapsUrl} target="_blank" rel="noopener noreferrer">
+                    <Map size={14} className="me-1" />
+                    Maps
+                  </a>
+                </Button>
+              </div>
 
               <Button
                 asChild
                 size="sm"
-                className="bg-[#25D366] hover:bg-[#20BD5A] text-white"
+                className="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white"
               >
                 <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">
                   <MessageCircle size={16} className="me-2" />

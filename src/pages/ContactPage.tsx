@@ -1,35 +1,12 @@
-import { useState } from 'react';
-import { MapPin, MessageCircle, Mail, Clock } from 'lucide-react';
+import { MapPin, MessageCircle, Mail, Send } from 'lucide-react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { LtrWrapper } from '@/components/LocalizedText';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { toast } from "sonner";
+
+const TELEGRAM_URL = 'https://t.me/+s_aXhLyQXoUzYzg0';
 
 export function ContactPage() {
   const { t, whatsAppUrl } = useLocale();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast.success(t.contact.form.success);
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
-  };
 
   return (
     <>
@@ -49,161 +26,93 @@ export function ContactPage() {
 
       <section className="section-padding bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Contact Form */}
-            <div>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">{t.contact.form.name}</Label>
-                    <Input 
-                      id="name" 
-                      name="name" 
-                      required 
-                      className="bg-muted/30"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">{t.contact.form.phone}</Label>
-                    <Input 
-                      id="phone" 
-                      name="phone" 
-                      type="tel" 
-                      dir="ltr"
-                      className="bg-muted/30"
-                    />
-                  </div>
+          <div className="max-w-3xl mx-auto">
+            {/* WhatsApp Booking Card */}
+            <div className="bg-[#25D366]/10 rounded-2xl p-8 border border-[#25D366]/20 mb-8">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-full bg-[#25D366] flex items-center justify-center">
+                  <MessageCircle className="w-8 h-8 text-white" />
                 </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="email">{t.contact.form.email}</Label>
-                  <Input 
-                    id="email" 
-                    name="email" 
-                    type="email" 
-                    dir="ltr"
-                    required 
-                    className="bg-muted/30"
-                  />
+                <div>
+                  <h2 className="text-2xl font-heading font-semibold text-primary">
+                    {t.contact.bookViaWhatsApp}
+                  </h2>
+                  <p className="text-muted-foreground">
+                    {t.contact.bookDescription}
+                  </p>
                 </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="treatment">{t.contact.form.treatment}</Label>
-                  <Select name="treatment">
-                    <SelectTrigger className="bg-muted/30">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="botox">
-                        {t.contact.form.treatmentOptions.botox}
-                      </SelectItem>
-                      <SelectItem value="fillers">
-                        {t.contact.form.treatmentOptions.fillers}
-                      </SelectItem>
-                      <SelectItem value="ultraformer">
-                        {t.contact.form.treatmentOptions.ultraformer}
-                      </SelectItem>
-                      <SelectItem value="skinboosters">
-                        {t.contact.form.treatmentOptions.skinboosters}
-                      </SelectItem>
-                      <SelectItem value="consultation">
-                        {t.contact.form.treatmentOptions.consultation}
-                      </SelectItem>
-                      <SelectItem value="other">
-                        {t.contact.form.treatmentOptions.other}
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message">{t.contact.form.message}</Label>
-                  <Textarea 
-                    id="message" 
-                    name="message" 
-                    rows={5}
-                    className="bg-muted/30"
-                  />
-                </div>
-
-                <Button 
-                  type="submit" 
-                  className="btn-primary w-full"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? '...' : t.contact.form.submit}
-                </Button>
-              </form>
+              </div>
+              <Button
+                asChild
+                size="lg"
+                className="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white text-lg py-6"
+              >
+                <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle size={22} className="me-3" />
+                  <span>WhatsApp</span>
+                </a>
+              </Button>
             </div>
 
-            {/* Contact Info */}
-            <div className="space-y-8">
-              {/* WhatsApp Card */}
-              <div className="bg-[#25D366]/10 rounded-2xl p-6 border border-[#25D366]/20">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center">
-                    <MessageCircle className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-semibold text-primary">
-                      {t.contact.info.whatsapp}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {t.locations.bookVia}
-                    </p>
-                  </div>
+            {/* Telegram Card */}
+            <div className="bg-[#0088cc]/10 rounded-2xl p-8 border border-[#0088cc]/20 mb-8">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-full bg-[#0088cc] flex items-center justify-center">
+                  <Send className="w-8 h-8 text-white" />
                 </div>
-                <Button
-                  asChild
-                  className="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white"
-                >
-                  <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle size={18} className="me-2" />
-                    <span>WhatsApp</span>
-                  </a>
-                </Button>
-              </div>
-
-              {/* Contact Info Cards */}
-              <div className="grid gap-4">
-                <div className="bg-muted/30 rounded-2xl p-6 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-secondary/50 flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-primary">{t.contact.info.email}</h3>
-                    <LtrWrapper className="text-muted-foreground">info@drromina.com</LtrWrapper>
-                  </div>
-                </div>
-
-                <div className="bg-muted/30 rounded-2xl p-6 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-secondary/50 flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-primary">{t.contact.info.hours}</h3>
-                    <p className="text-muted-foreground">{t.contact.info.hoursValue}</p>
-                  </div>
+                <div>
+                  <h2 className="text-2xl font-heading font-semibold text-primary">
+                    {t.telegram.title}
+                  </h2>
+                  <p className="text-muted-foreground">
+                    {t.telegram.description}
+                  </p>
                 </div>
               </div>
+              <Button
+                asChild
+                size="lg"
+                className="w-full bg-[#0088cc] hover:bg-[#0077b5] text-white text-lg py-6"
+              >
+                <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
+                  <Send size={22} className="me-3" />
+                  {t.telegram.cta}
+                </a>
+              </Button>
+            </div>
 
-              {/* Locations */}
-              <div>
-                <h3 className="font-heading font-semibold text-primary mb-4">
-                  {t.locations.title}
-                </h3>
-                <div className="space-y-3">
-                  {t.locations.items.map((location, index) => (
-                    <div 
-                      key={index}
-                      className="bg-muted/20 rounded-xl p-4 flex items-center gap-3"
-                    >
+            {/* Contact Info Cards */}
+            <div className="grid gap-4 mb-8">
+              <div className="bg-muted/30 rounded-2xl p-6 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-secondary/50 flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-medium text-primary">{t.contact.info.email}</h3>
+                  <LtrWrapper className="text-muted-foreground">info@drromina.com</LtrWrapper>
+                </div>
+              </div>
+            </div>
+
+            {/* Locations */}
+            <div>
+              <h3 className="font-heading font-semibold text-primary mb-4 text-xl">
+                {t.locations.title}
+              </h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                {t.locations.items.map((location, index) => (
+                  <div 
+                    key={index}
+                    className="bg-muted/20 rounded-xl p-4"
+                  >
+                    <div className="flex items-center gap-2 mb-2">
                       <MapPin className="w-5 h-5 text-secondary flex-shrink-0" />
-                      <span className="text-muted-foreground">{location.name}</span>
+                      <span className="font-medium text-primary">{location.name}</span>
                     </div>
-                  ))}
-                </div>
+                    <p className="text-sm text-muted-foreground mb-1">{location.address}</p>
+                    <p className="text-xs text-muted-foreground/80">{location.details}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
