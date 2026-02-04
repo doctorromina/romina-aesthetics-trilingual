@@ -22,7 +22,7 @@ export const en = {
     bio: [
       'Dr. Romina Raykhshtat is an injectable aesthetics specialist practicing in Tel Aviv, Rishon LeZion, and Bat Yam, Israel. With a foundational background in dental medicine, she brings a uniquely precise understanding of facial anatomy — bone structure, musculature, fat distribution, and skin dynamics — to every aesthetic treatment.',
       'Her transition from dentistry to aesthetic medicine was driven by a simple observation: the same anatomical knowledge that enables precise dental work provides an exceptional foundation for facial aesthetics. This dual expertise allows her to approach each face as an interconnected system rather than a collection of individual concerns.',
-      'Dr. Raykhshtat specializes in injectable treatments including Botulinum toxin (Botox), hyaluronic acid dermal fillers, ULTRAFORMER collagen stimulation, and advanced skin boosters. Her treatment philosophy centers on natural enhancement — working with each patient\'s unique facial architecture to restore freshness and harmony without erasing character.',
+      'Dr. Raykhshtat specializes in injectable treatments including Botulinum toxin (Botox), hyaluronic acid dermal fillers, and ULTRAFORMER collagen stimulation. Her treatment philosophy centers on natural enhancement — working with each patient\'s unique facial architecture to restore freshness and harmony without erasing character.',
       'Living between Germany and Israel, she combines European precision with the warmth and personal attention that define her practice. She consults in Hebrew, Russian, and English, serving Israel\'s diverse community of patients.',
     ],
     readMore: 'Learn more',
@@ -190,7 +190,7 @@ export const en = {
       },
       {
         name: 'Tel Aviv',
-        address: 'Menachem Begin 150, Tel Aviv',
+        address: 'Menachem Begin Rd 150, Tel Aviv',
         details: 'We Tower, Floor 6, Eco House Clinic',
         mapsUrl: 'https://www.google.com/maps/search/דרך+מנחם+בגין+150+תל+אביב',
       },
