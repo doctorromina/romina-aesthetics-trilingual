@@ -8,7 +8,7 @@ import { FaceLineArt } from './FaceLineArt';
 export function Layout() {
   return (
     <LocaleProvider>
-      <div className="min-h-screen flex flex-col relative">
+      <div className="min-h-screen flex flex-col relative bg-background">
         {/* Subtle background line art watermark */}
         <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
           <FaceLineArt 
