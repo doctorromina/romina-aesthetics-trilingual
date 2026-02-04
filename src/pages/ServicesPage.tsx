@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Syringe, Sparkles, Zap, Atom, CheckCircle } from 'lucide-react';
+import { Syringe, Sparkles, Zap, Atom } from 'lucide-react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { Button } from '@/components/ui/button';
 import {
@@ -11,13 +11,13 @@ import {
 } from "@/components/ui/accordion";
 
 const serviceIcons = {
-  botox: Syringe,
-  fillers: Sparkles,
+  botulinum: Syringe,
+  sculpting: Sparkles,
   collagen: Atom,
   ultraformer: Zap,
 };
 
-const serviceKeys = ['botox', 'fillers', 'collagen', 'ultraformer'] as const;
+const serviceKeys = ['botulinum', 'sculpting', 'collagen', 'ultraformer'] as const;
 
 export function ServicesPage() {
   const { t, whatsAppUrl } = useLocale();
@@ -42,11 +42,11 @@ export function ServicesPage() {
       {/* Hero */}
       <section className="py-16 md:py-20 gradient-hero">
         <div className="container mx-auto px-4 md:px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-4">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">
             {t.services.title}
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            {t.services.subtitle}
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            {t.services.intro}
           </p>
         </div>
       </section>
@@ -105,21 +105,6 @@ export function ServicesPage() {
                         {service.fullDesc}
                       </p>
 
-                      {/* Benefits */}
-                      <div className="bg-muted/30 rounded-2xl p-6 mb-8">
-                        <h3 className="font-heading font-semibold text-primary mb-4">
-                          Benefits
-                        </h3>
-                        <ul className="space-y-3">
-                          {service.benefits.map((benefit, i) => (
-                            <li key={i} className="flex items-start gap-3">
-                              <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                              <span className="text-muted-foreground">{benefit}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
                       <Button asChild className="btn-primary">
                         <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">
                           {t.services.bookConsultation}
@@ -161,6 +146,13 @@ export function ServicesPage() {
                 </section>
               );
             })}
+          </div>
+
+          {/* Disclaimer */}
+          <div className="mt-20 pt-12 border-t border-border/50">
+            <p className="text-sm text-muted-foreground text-center max-w-3xl mx-auto">
+              {t.services.disclaimer}
+            </p>
           </div>
         </div>
       </div>

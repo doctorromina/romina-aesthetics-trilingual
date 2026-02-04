@@ -4,8 +4,8 @@ import { useLocale } from '@/contexts/LocaleContext';
 import { Button } from '@/components/ui/button';
 
 const serviceIcons = {
-  botox: Syringe,
-  fillers: Sparkles,
+  botulinum: Syringe,
+  sculpting: Sparkles,
   collagen: Atom,
   ultraformer: Zap,
 };
@@ -16,8 +16,8 @@ export function ServicesPreview() {
   const Arrow = dir === 'rtl' ? ArrowLeft : ArrowRight;
 
   const services = [
-    { key: 'botox' as const, anchor: 'botox' },
-    { key: 'fillers' as const, anchor: 'fillers' },
+    { key: 'botulinum' as const, anchor: 'botulinum' },
+    { key: 'sculpting' as const, anchor: 'sculpting' },
     { key: 'collagen' as const, anchor: 'collagen' },
     { key: 'ultraformer' as const, anchor: 'ultraformer' },
   ];
@@ -36,7 +36,7 @@ export function ServicesPreview() {
             {t.services.title}
           </h2>
           <p className="text-lg text-muted-foreground">
-            {t.services.subtitle}
+            {t.services.intro}
           </p>
         </div>
 
