@@ -47,107 +47,96 @@ export const en = {
   },
   services: {
     title: 'Treatments',
-    subtitle: 'Personalized aesthetic solutions',
+    intro: 'Every treatment begins with understanding your face — its structure, movement, and how it has changed over time. I combine injectable precision with a whole-face perspective to achieve results that look like you, only refreshed.',
     viewAll: 'View all services',
     bookConsultation: 'Book a consultation',
+    disclaimer: 'Results may vary. All treatments require an in-person consultation. This website provides general information and does not constitute medical advice.',
     items: {
-      botox: {
+      botulinum: {
+        id: 'botulinum',
         name: 'Botulinum Therapy',
         shortDesc: 'Softens expression lines while preserving natural movement.',
-        fullDesc: 'Botulinum therapy is a proven, safe treatment for reducing expression lines. I use advanced techniques that allow preservation of natural facial expressions while softening wrinkles.',
-        benefits: [
-          'Reduction of forehead and crow\'s feet lines',
-          'Prevention of new wrinkle formation',
-          'Subtle brow lift',
-          'Treatment of excessive sweating',
-        ],
+        fullDesc: 'Botulinum therapy relaxes specific facial muscles to soften expression lines — forehead wrinkles, frown lines, crow\'s feet. When done right, you keep your expressions. You just look more rested.',
         faq: [
           {
-            q: 'What is the recovery time?',
-            a: 'There is no downtime. You can return to normal activities immediately after treatment.',
+            q: 'How is this different from "freezing" the face?',
+            a: 'The goal isn\'t to freeze anything. I use precise doses in specific areas to soften lines while keeping natural movement. You\'ll still look like you — just more relaxed.',
           },
           {
-            q: 'How long do results last?',
-            a: 'Results typically last 3-4 months, depending on the treatment area and individual.',
+            q: 'How long does it last?',
+            a: 'Typically 3-4 months. With regular treatments, some patients find they need less product over time as the muscles "learn" to relax.',
           },
           {
-            q: 'Is the treatment painful?',
-            a: 'The treatment involves minimal discomfort. Very fine needles are used.',
+            q: 'Is it painful?',
+            a: 'Most patients describe it as a slight pinch. The needles are very fine, and the treatment takes about 15-20 minutes.',
           },
         ],
       },
-      fillers: {
+      sculpting: {
+        id: 'sculpting',
         name: 'Facial Sculpting',
         shortDesc: 'Restores volume and contours with a full-face approach.',
-        fullDesc: 'Facial sculpting using hyaluronic acid-based fillers restores volume, enhances contours, and provides deep hydration to the skin. My approach is systematic — I examine the face as a whole.',
-        benefits: [
-          'Volume restoration in cheeks and lips',
-          'Filling wrinkles and hollows',
-          'Jawline and chin enhancement',
-          'Facial symmetry improvement',
-        ],
+        fullDesc: 'Facial sculpting uses hyaluronic acid fillers to restore volume, enhance contours, and address deep folds. I approach every face as a whole — understanding how cheeks, jawline, chin, and lips work together to create harmony.',
         faq: [
           {
-            q: 'What products are used?',
-            a: 'I work with leading hyaluronic acid-based fillers — a natural substance found in the body.',
+            q: 'What\'s the difference between fillers and Botox?',
+            a: 'Botulinum relaxes muscles. Fillers add volume. They work on different issues and often complement each other beautifully.',
           },
           {
-            q: 'How long do results last?',
-            a: 'Results typically last 9-18 months, depending on the area and type of filler.',
+            q: 'How long do fillers last?',
+            a: 'Depending on the area and product, 6-18 months. Lips tend to metabolize faster; cheekbones last longer.',
           },
           {
-            q: 'Are there side effects?',
-            a: 'Mild swelling and bruising may occur, resolving within a few days.',
+            q: 'Can fillers be dissolved if I don\'t like the result?',
+            a: 'Yes. Hyaluronic acid fillers can be dissolved with an enzyme called hyaluronidase. It\'s one of the reasons I prefer working with HA-based products.',
+          },
+          {
+            q: 'Which areas can be treated?',
+            a: 'Cheeks, jawline, chin, lips, nasolabial folds, marionette lines, tear troughs, temples — essentially anywhere volume has been lost or contours need enhancement.',
           },
         ],
       },
       collagen: {
+        id: 'collagen',
         name: 'Collagen Stimulation',
         shortDesc: 'Stimulates natural collagen production for firmer, youthful skin.',
-        fullDesc: 'Collagen stimulation treatments encourage your body to produce new collagen naturally. The result is firmer skin with improved texture and overall appearance, with effects that strengthen over time.',
-        benefits: [
-          'Stimulates natural collagen production',
-          'Improves skin texture and quality',
-          'Reduces fine lines and wrinkles',
-          'Long-lasting progressive results',
-        ],
+        fullDesc: 'Collagen stimulation treatments work beneath the surface — triggering your skin\'s own regeneration processes. Instead of adding volume, they improve skin quality, firmness, and elasticity over time. This is the foundation of the Longevity approach.',
         faq: [
           {
-            q: 'How does the treatment work?',
-            a: 'The treatment stimulates fibroblast cells in the skin to produce new collagen and elastin.',
+            q: 'How is this different from fillers?',
+            a: 'Fillers add volume immediately. Collagen stimulators work gradually — they trigger your body to produce its own collagen. The results are more subtle but also more natural and longer-lasting.',
           },
           {
-            q: 'When are results visible?',
-            a: 'Initial results appear within a few weeks, with continued improvement over 3-6 months.',
+            q: 'When will I see results?',
+            a: 'Collagen production takes time. Most patients start noticing improvements after 4-6 weeks, with optimal results at 3-6 months.',
           },
           {
-            q: 'How many treatments are needed?',
-            a: 'Usually a series of 2-3 treatments one month apart is recommended.',
+            q: 'Who is this best for?',
+            a: 'Anyone focused on skin quality and prevention rather than just filling lines. It\'s especially effective for those thinking long-term about how their skin will age.',
           },
         ],
       },
       ultraformer: {
+        id: 'ultraformer',
         name: 'ULTRAFORMER',
         shortDesc: 'Non-invasive lifting through collagen stimulation.',
-        fullDesc: 'ULTRAFORMER is advanced HIFU technology delivering skin lifting and tightening without surgery. The treatment stimulates natural collagen production at various depth levels.',
-        benefits: [
-          'Face lifting and skin tightening',
-          'Jawline improvement',
-          'Double chin reduction',
-          'Progressive improvement over time',
-        ],
+        fullDesc: 'ULTRAFORMER uses focused ultrasound to tighten skin and stimulate collagen in the deep layers — the same layers a surgical facelift would address. No cuts, no downtime, gradual natural-looking lift over 2-3 months.',
         faq: [
           {
-            q: 'What is HIFU technology?',
-            a: 'HIFU (High Intensity Focused Ultrasound) is focused ultrasound at high intensity that penetrates deep skin layers.',
+            q: 'How is this different from a surgical facelift?',
+            a: 'Surgery physically repositions tissue. ULTRAFORMER stimulates your skin to tighten itself from within. The results are more subtle but with zero downtime and no surgical risks.',
           },
           {
-            q: 'When are results visible?',
-            a: 'Initial results are visible immediately, with continued improvement over 3-6 months.',
+            q: 'Is anesthesia needed?',
+            a: 'No. Most patients feel warmth and some discomfort during treatment, but it\'s tolerable. We can use numbing cream for sensitive areas.',
           },
           {
-            q: 'How many treatments are needed?',
-            a: 'Usually one treatment is sufficient, with annual maintenance treatments.',
+            q: 'How many sessions do I need?',
+            a: 'Most patients see good results from a single session. Depending on your goals and skin condition, we might recommend a follow-up treatment after 12-18 months.',
+          },
+          {
+            q: 'How long do results last?',
+            a: 'Results continue to improve for 2-3 months as collagen builds, then last 1-2 years depending on your skin and lifestyle.',
           },
         ],
       },
