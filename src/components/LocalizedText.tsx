@@ -4,10 +4,11 @@ interface DrRominaNameProps {
   className?: string;
 }
 
+// Keeps the doctor name from breaking across lines
 export function DrRominaName({ className = '' }: DrRominaNameProps) {
   return (
-    <span translate="no" className={className}>
-      Dr. Romina Raykhshtat
+    <span translate="no" className={`whitespace-nowrap ${className}`}>
+      Dr. Romina
     </span>
   );
 }

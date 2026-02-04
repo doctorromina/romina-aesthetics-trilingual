@@ -1,13 +1,21 @@
 import { useLocale } from '@/contexts/LocaleContext';
 import { Button } from '@/components/ui/button';
+import { FaceLineArt } from '@/components/FaceLineArt';
 
 export function HeroSection() {
   const { t, whatsAppUrl } = useLocale();
 
   return (
     <section className="relative min-h-[90vh] flex items-center gradient-hero overflow-hidden">
+      {/* Background Line Art - right side */}
+      <div className="absolute inset-inline-end-0 top-1/2 -translate-y-1/2 pointer-events-none select-none">
+        <FaceLineArt 
+          className="w-[400px] h-[500px] md:w-[500px] md:h-[650px] text-primary opacity-[0.06]" 
+        />
+      </div>
+
       {/* Background Decorative R */}
-      <div className="absolute inset-inline-end-0 top-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none">
+      <div className="absolute inset-inline-end-0 top-1/2 -translate-y-1/2 opacity-[0.02] pointer-events-none select-none">
         <span 
           className="text-[40rem] font-heading font-bold text-primary leading-none"
           aria-hidden="true"

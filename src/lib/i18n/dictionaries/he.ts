@@ -48,7 +48,7 @@ export const he = {
     bookConsultation: 'לקביעת ייעוץ',
     items: {
       botox: {
-        name: 'בוטולינום',
+        name: 'טיפול בבוטולינום',
         shortDesc: 'מרכך קמטי הבעה תוך שמירה על תנועה טבעית.',
         fullDesc: 'טיפול בוטולינום הוא טיפול מוכח ובטוח להפחתת קמטי הבעה. אני משתמשת בטכניקות מתקדמות שמאפשרות שמירה על הבעות פנים טבעיות תוך מיתון קמטים.',
         benefits: [
@@ -180,26 +180,24 @@ export const he = {
     items: [
       {
         name: 'בת ים',
-        address: 'רב ניסנבאום 37',
+        address: 'רב ניסנבאום 37, בת ים',
         details: 'Uptown Business, קומה 13, חדר 125',
-        wazeUrl: 'https://waze.com/ul?ll=32.0167,34.7500&navigate=yes',
-        mapsUrl: 'https://maps.google.com/?q=רב+ניסנבאום+37+בת+ים',
+        mapsUrl: 'https://www.google.com/maps/search/רב+ניסנבאום+37+בת+ים',
       },
       {
         name: 'תל אביב',
-        address: 'דרך מנחם בגין 150',
+        address: 'דרך מנחם בגין 150, תל אביב',
         details: 'We Tower, קומה 6, מרפאת Eco House',
-        wazeUrl: 'https://waze.com/ul?ll=32.0731,34.7925&navigate=yes',
-        mapsUrl: 'https://maps.google.com/?q=מנחם+בגין+150+תל+אביב',
+        mapsUrl: 'https://www.google.com/maps/search/דרך+מנחם+בגין+150+תל+אביב',
       },
       {
         name: 'ראשון לציון',
-        address: 'רוטשילד 78',
+        address: 'רוטשילד 78, ראשון לציון',
         details: 'קומה 1, מרפאת שיניים ד״ר דשבסקי',
-        wazeUrl: 'https://waze.com/ul?ll=31.9730,34.7925&navigate=yes',
-        mapsUrl: 'https://maps.google.com/?q=רוטשילד+78+ראשון+לציון',
+        mapsUrl: 'https://www.google.com/maps/search/רוטשילד+78+ראשון+לציון',
       },
     ],
+    scanQR: 'סרקו לניווט',
     bookVia: 'להזמנת תור ב-WhatsApp',
     getDirections: 'ניווט',
   },
