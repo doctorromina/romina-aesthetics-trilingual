@@ -1,10 +1,9 @@
-import { MapPin, MessageCircle } from 'lucide-react';
-import { QRCodeSVG } from 'qrcode.react';
+import { MapPin, Navigation } from 'lucide-react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { Button } from '@/components/ui/button';
 
 export function LocationsSection() {
-  const { t, whatsAppUrl } = useLocale();
+  const { t } = useLocale();
 
   return (
     <section className="section-padding bg-background">
@@ -39,45 +38,20 @@ export function LocationsSection() {
                 {location.details}
               </p>
 
-              {/* QR Code */}
-              <div className="flex flex-col items-center mb-4">
-                <a 
-                  href={location.mapsUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-3 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <QRCodeSVG 
-                    value={location.mapsUrl}
-                    size={100}
-                    level="M"
-                    bgColor="#ffffff"
-                    fgColor="#434951"
-                  />
-                </a>
-                <span className="text-xs text-muted-foreground mt-2">
-                  {t.locations.scanQR}
-                </span>
-              </div>
-
               <Button
                 asChild
+                variant="outline"
                 size="sm"
-                className="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white"
+                className="w-full"
               >
-                <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle size={16} className="me-2" />
-                  <span>WhatsApp</span>
+                <a href={location.mapsUrl} target="_blank" rel="noopener noreferrer">
+                  <Navigation size={16} className="me-2" />
+                  <span>{t.locations.getDirections}</span>
                 </a>
               </Button>
             </div>
           ))}
         </div>
-
-        {/* Note */}
-        <p className="text-center text-sm text-muted-foreground mt-8">
-          {t.locations.bookVia}
-        </p>
       </div>
     </section>
   );
