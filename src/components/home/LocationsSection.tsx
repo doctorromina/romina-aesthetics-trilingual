@@ -1,4 +1,5 @@
-import { MapPin, MessageCircle, Navigation, Map } from 'lucide-react';
+import { MapPin, MessageCircle } from 'lucide-react';
+import { QRCodeSVG } from 'qrcode.react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { Button } from '@/components/ui/button';
 
@@ -38,30 +39,25 @@ export function LocationsSection() {
                 {location.details}
               </p>
 
-              {/* Navigation buttons */}
-              <div className="flex gap-2 mb-4">
-                <Button
-                  asChild
-                  size="sm"
-                  variant="outline"
-                  className="flex-1 text-xs"
+              {/* QR Code */}
+              <div className="flex flex-col items-center mb-4">
+                <a 
+                  href={location.mapsUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <a href={location.wazeUrl} target="_blank" rel="noopener noreferrer">
-                    <Navigation size={14} className="me-1" />
-                    Waze
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  size="sm"
-                  variant="outline"
-                  className="flex-1 text-xs"
-                >
-                  <a href={location.mapsUrl} target="_blank" rel="noopener noreferrer">
-                    <Map size={14} className="me-1" />
-                    Maps
-                  </a>
-                </Button>
+                  <QRCodeSVG 
+                    value={location.mapsUrl}
+                    size={100}
+                    level="M"
+                    bgColor="#ffffff"
+                    fgColor="#434951"
+                  />
+                </a>
+                <span className="text-xs text-muted-foreground mt-2">
+                  {t.locations.scanQR}
+                </span>
               </div>
 
               <Button
