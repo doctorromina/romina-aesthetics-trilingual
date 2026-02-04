@@ -36,7 +36,7 @@ export function AboutPreview() {
             </h2>
             
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              {t.about.intro}
+              {t.about.bio[0]}
             </p>
 
             <Link 
