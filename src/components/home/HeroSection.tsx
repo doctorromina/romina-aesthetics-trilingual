@@ -1,9 +1,8 @@
-import { Link } from 'react-router-dom';
 import { useLocale } from '@/contexts/LocaleContext';
 import { Button } from '@/components/ui/button';
 
 export function HeroSection() {
-  const { t, getPath } = useLocale();
+  const { t, whatsAppUrl } = useLocale();
 
   return (
     <section className="relative min-h-[90vh] flex items-center gradient-hero overflow-hidden">
@@ -38,7 +37,7 @@ export function HeroSection() {
 
             {/* CTA */}
             <Button asChild className="btn-primary text-base px-10 py-4 h-auto">
-              <Link to={getPath('/contact')}>{t.hero.cta}</Link>
+              <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">{t.hero.cta}</a>
             </Button>
           </div>
 

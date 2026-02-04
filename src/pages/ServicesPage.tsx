@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
-import { Syringe, Droplets, Zap, Sparkles, CheckCircle, ChevronDown } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+import { Syringe, Sparkles, Zap, Atom, CheckCircle } from 'lucide-react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { Button } from '@/components/ui/button';
 import {
@@ -12,15 +12,15 @@ import {
 
 const serviceIcons = {
   botox: Syringe,
-  fillers: Droplets,
+  fillers: Sparkles,
+  collagen: Atom,
   ultraformer: Zap,
-  skinboosters: Sparkles,
 };
 
-const serviceKeys = ['botox', 'fillers', 'ultraformer', 'skinboosters'] as const;
+const serviceKeys = ['botox', 'fillers', 'collagen', 'ultraformer'] as const;
 
 export function ServicesPage() {
-  const { t, getPath } = useLocale();
+  const { t, whatsAppUrl } = useLocale();
   const location = useLocation();
 
   // Scroll to anchor on hash change
@@ -108,7 +108,7 @@ export function ServicesPage() {
                       {/* Benefits */}
                       <div className="bg-muted/30 rounded-2xl p-6 mb-8">
                         <h3 className="font-heading font-semibold text-primary mb-4">
-                          {key === 'botox' ? 'Benefits' : 'Benefits'}
+                          Benefits
                         </h3>
                         <ul className="space-y-3">
                           {service.benefits.map((benefit, i) => (
@@ -121,7 +121,9 @@ export function ServicesPage() {
                       </div>
 
                       <Button asChild className="btn-primary">
-                        <Link to={getPath('/contact')}>{t.services.bookConsultation}</Link>
+                        <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">
+                          {t.services.bookConsultation}
+                        </a>
                       </Button>
                     </div>
 

@@ -73,7 +73,6 @@ export function Footer() {
               <li>
                 <LtrWrapper>+972-5X-XXX-XXXX</LtrWrapper>
               </li>
-              <li>{t.contact.info.hoursValue}</li>
             </ul>
           </div>
 

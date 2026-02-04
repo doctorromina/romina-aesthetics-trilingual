@@ -1,7 +1,7 @@
 export const en = {
   meta: {
     title: 'Dr. Romina Raykhshtat | Medical Aesthetics',
-    description: 'Natural injectable aesthetics by Dr. Romina Raykhshtat. Botox, fillers, ULTRAFORMER, and skin boosters in Tel Aviv, Rishon LeZion, and Bat Yam.',
+    description: 'Natural injectable aesthetics by Dr. Romina Raykhshtat. Botulinum therapy, facial sculpting, collagen stimulation, and ULTRAFORMER in Tel Aviv, Rishon LeZion, and Bat Yam.',
   },
   nav: {
     home: 'Home',
@@ -48,9 +48,9 @@ export const en = {
     bookConsultation: 'Book a consultation',
     items: {
       botox: {
-        name: 'Botox & Neuromodulators',
+        name: 'Botulinum Therapy',
         shortDesc: 'Softens expression lines while preserving natural movement.',
-        fullDesc: 'Botox is a proven, safe treatment for reducing expression lines. I use advanced techniques that allow preservation of natural facial expressions while softening wrinkles.',
+        fullDesc: 'Botulinum therapy is a proven, safe treatment for reducing expression lines. I use advanced techniques that allow preservation of natural facial expressions while softening wrinkles.',
         benefits: [
           'Reduction of forehead and crow\'s feet lines',
           'Prevention of new wrinkle formation',
@@ -73,9 +73,9 @@ export const en = {
         ],
       },
       fillers: {
-        name: 'Dermal Fillers',
+        name: 'Facial Sculpting',
         shortDesc: 'Restores volume and contours with a full-face approach.',
-        fullDesc: 'Hyaluronic acid-based fillers restore volume, enhance contours, and provide deep hydration to the skin. My approach is systematic — I examine the face as a whole.',
+        fullDesc: 'Facial sculpting using hyaluronic acid-based fillers restores volume, enhances contours, and provides deep hydration to the skin. My approach is systematic — I examine the face as a whole.',
         benefits: [
           'Volume restoration in cheeks and lips',
           'Filling wrinkles and hollows',
@@ -94,6 +94,31 @@ export const en = {
           {
             q: 'Are there side effects?',
             a: 'Mild swelling and bruising may occur, resolving within a few days.',
+          },
+        ],
+      },
+      collagen: {
+        name: 'Collagen Stimulation',
+        shortDesc: 'Stimulates natural collagen production for firmer, youthful skin.',
+        fullDesc: 'Collagen stimulation treatments encourage your body to produce new collagen naturally. The result is firmer skin with improved texture and overall appearance, with effects that strengthen over time.',
+        benefits: [
+          'Stimulates natural collagen production',
+          'Improves skin texture and quality',
+          'Reduces fine lines and wrinkles',
+          'Long-lasting progressive results',
+        ],
+        faq: [
+          {
+            q: 'How does the treatment work?',
+            a: 'The treatment stimulates fibroblast cells in the skin to produce new collagen and elastin.',
+          },
+          {
+            q: 'When are results visible?',
+            a: 'Initial results appear within a few weeks, with continued improvement over 3-6 months.',
+          },
+          {
+            q: 'How many treatments are needed?',
+            a: 'Usually a series of 2-3 treatments one month apart is recommended.',
           },
         ],
       },
@@ -122,31 +147,6 @@ export const en = {
           },
         ],
       },
-      skinboosters: {
-        name: 'Skin Boosters',
-        shortDesc: 'Deep hydration for natural glow and texture.',
-        fullDesc: 'Skin boosters are deep hydration treatments injecting hyaluronic acid directly into the skin. The result: glowing, hydrated, healthy skin from within.',
-        benefits: [
-          'Deep, lasting hydration',
-          'Skin texture improvement',
-          'Natural glow and freshness',
-          'Fine line reduction',
-        ],
-        faq: [
-          {
-            q: 'Who is this treatment for?',
-            a: 'The treatment suits all skin types, especially tired, dry, or dull skin.',
-          },
-          {
-            q: 'How many treatments are needed?',
-            a: 'A series of 3 treatments one month apart is recommended, followed by maintenance.',
-          },
-          {
-            q: 'What is the recovery?',
-            a: 'Small red dots may appear, disappearing within 1-2 days.',
-          },
-        ],
-      },
     },
   },
   philosophy: {
@@ -170,50 +170,47 @@ export const en = {
     title: 'Follow the journey',
     handle: '@doctor_romina',
   },
+  telegram: {
+    title: 'Private Club',
+    description: 'Join our private club for exclusive updates and early appointment slots',
+    cta: 'Join Now',
+  },
   locations: {
     title: 'Clinic Locations',
     items: [
       {
-        name: 'Tel Aviv (Midtown)',
-        address: 'Midtown Tower, Tel Aviv',
+        name: 'Bat Yam',
+        address: 'Rav Nissenbaum 37',
+        details: 'Uptown Business, Floor 13, Room 125',
+        wazeUrl: 'https://waze.com/ul?ll=32.0167,34.7500&navigate=yes',
+        mapsUrl: 'https://maps.google.com/?q=Rav+Nissenbaum+37+Bat+Yam',
+      },
+      {
+        name: 'Tel Aviv',
+        address: 'Menachem Begin 150',
+        details: 'We Tower, Floor 6, Eco House Clinic',
+        wazeUrl: 'https://waze.com/ul?ll=32.0731,34.7925&navigate=yes',
+        mapsUrl: 'https://maps.google.com/?q=Menachem+Begin+150+Tel+Aviv',
       },
       {
         name: 'Rishon LeZion',
-        address: 'Rishon LeZion',
-      },
-      {
-        name: 'Bat Yam',
-        address: 'Bat Yam',
+        address: 'Rothschild 78',
+        details: 'Floor 1, Dr. Dashevsky Dental Clinic',
+        wazeUrl: 'https://waze.com/ul?ll=31.9730,34.7925&navigate=yes',
+        mapsUrl: 'https://maps.google.com/?q=Rothschild+78+Rishon+LeZion',
       },
     ],
     bookVia: 'Book via WhatsApp',
+    getDirections: 'Directions',
   },
   contact: {
     title: 'Contact',
     subtitle: 'We\'re happy to answer any questions',
-    form: {
-      name: 'Full Name',
-      email: 'Email',
-      phone: 'Phone',
-      message: 'Message',
-      treatment: 'Treatment of interest',
-      treatmentOptions: {
-        botox: 'Botox',
-        fillers: 'Dermal Fillers',
-        ultraformer: 'ULTRAFORMER',
-        skinboosters: 'Skin Boosters',
-        consultation: 'Initial Consultation',
-        other: 'Other',
-      },
-      submit: 'Send',
-      success: 'Message sent successfully!',
-      error: 'An error occurred. Please try again.',
-    },
+    bookViaWhatsApp: 'Book via WhatsApp',
+    bookDescription: 'All appointments are booked through WhatsApp. Click the button below to start a conversation.',
     info: {
       whatsapp: 'WhatsApp',
       email: 'Email',
-      hours: 'Hours',
-      hoursValue: 'Sun-Thu 9:00-18:00',
     },
   },
   footer: {
