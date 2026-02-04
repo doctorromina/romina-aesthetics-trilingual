@@ -19,9 +19,9 @@ export function AboutPage() {
       
       {/* Hero Section */}
       <section className="relative section-padding gradient-hero overflow-hidden">
-        {/* Background Line Art */}
-        <div className="absolute inset-inline-end-0 top-1/2 -translate-y-1/2 pointer-events-none select-none opacity-[0.04]">
-          <FaceLineArt className="w-[400px] h-[600px] text-primary" />
+        {/* Background Line Art - right side, subtle watermark */}
+        <div className="absolute inset-inline-end-0 top-1/2 -translate-y-1/2 pointer-events-none select-none opacity-[0.06]">
+          <FaceLineArt className="w-[400px] h-[600px] text-[#434951]" />
         </div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -49,12 +49,10 @@ export function AboutPage() {
               
               <p className="text-xl text-muted-foreground mb-8">
                 <span 
-                  translate="no" 
-                  className="whitespace-nowrap"
                   dangerouslySetInnerHTML={{ 
                     __html: t.about.heroSubheading.replace(
                       /Dr\.\s*Romina(\s*Raykhshtat)?/gi,
-                      (match) => `<span style="white-space: nowrap;">${match.replace(/\s+/g, '\u00A0')}</span>`
+                      (match) => `<span translate="no" style="white-space: nowrap;">${match.replace(/\s+/g, '\u00A0')}</span>`
                     )
                   }}
                 />
@@ -92,7 +90,7 @@ export function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-6">
               {t.about.philosophy.title}
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
               {t.about.philosophy.description}
             </p>
           </div>

@@ -1,11 +1,6 @@
-import { MapPin, Navigation, Map } from 'lucide-react';
+import { MapPin } from 'lucide-react';
+import { QRCodeSVG } from 'qrcode.react';
 import { useLocale } from '@/contexts/LocaleContext';
-import { Button } from '@/components/ui/button';
-
-// Generate Waze URL from address
-function getWazeUrl(address: string): string {
-  return `https://waze.com/ul?q=${encodeURIComponent(address)}`;
-}
 
 export function LocationsSection() {
   const { t } = useLocale();
@@ -43,29 +38,19 @@ export function LocationsSection() {
                 {location.details}
               </p>
 
-              <div className="flex gap-2">
-                <Button
-                  asChild
-                  variant="outline"
-                  size="sm"
-                  className="flex-1"
-                >
-                  <a href={location.mapsUrl} target="_blank" rel="noopener noreferrer">
-                    <Map size={16} className="me-1" />
-                    <span>Google</span>
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="sm"
-                  className="flex-1"
-                >
-                  <a href={getWazeUrl(location.address)} target="_blank" rel="noopener noreferrer">
-                    <Navigation size={16} className="me-1" />
-                    <span>Waze</span>
-                  </a>
-                </Button>
+              {/* QR Code */}
+              <div className="flex flex-col items-center gap-2 mt-4 pt-4 border-t border-border/50">
+                <div className="bg-white p-2 rounded-lg">
+                  <QRCodeSVG 
+                    value={location.mapsUrl} 
+                    size={80}
+                    level="M"
+                    includeMargin={false}
+                  />
+                </div>
+                <p className="text-xs text-muted-foreground/70">
+                  {t.locations.scanQR}
+                </p>
               </div>
             </div>
           ))}

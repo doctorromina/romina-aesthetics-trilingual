@@ -7,10 +7,10 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center gradient-hero overflow-hidden">
-      {/* Background Line Art - right side */}
-      <div className="absolute inset-inline-end-0 top-1/2 -translate-y-1/2 pointer-events-none select-none">
+      {/* Background Line Art - right side, subtle watermark */}
+      <div className="absolute inset-inline-end-0 top-1/2 -translate-y-1/2 pointer-events-none select-none opacity-[0.06]">
         <FaceLineArt 
-          className="w-[400px] h-[500px] md:w-[500px] md:h-[650px] text-primary opacity-[0.06]" 
+          className="w-[400px] h-[500px] md:w-[500px] md:h-[650px] text-[#434951]" 
         />
       </div>
 
