@@ -39,9 +39,15 @@ export function HeroSection() {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              {t.hero.subheadline}
-            </p>
+            <p 
+              className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed"
+              dangerouslySetInnerHTML={{ 
+                __html: t.hero.subheadline.replace(
+                  /Dr\.\s*Romina(\s*Raykhshtat)?/gi,
+                  (match) => `<span style="white-space: nowrap;">${match.replace(/\s+/g, '\u00A0')}</span>`
+                )
+              }}
+            />
 
             {/* CTA */}
             <Button asChild className="btn-primary text-base px-10 py-4 h-auto">
