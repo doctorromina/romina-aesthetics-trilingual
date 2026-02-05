@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Syringe, Sparkles, Zap, Atom } from 'lucide-react';
+import { Sparkles, PenTool, Heart, Atom, Droplets, Zap } from 'lucide-react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { Button } from '@/components/ui/button';
 import {
@@ -11,13 +11,15 @@ import {
 } from "@/components/ui/accordion";
 
 const serviceIcons = {
-  botulinum: Syringe,
-  sculpting: Sparkles,
+  botulinum: Sparkles,
+  sculpting: PenTool,
+  lips: Heart,
   collagen: Atom,
+  skinQuality: Droplets,
   ultraformer: Zap,
 };
 
-const serviceKeys = ['botulinum', 'sculpting', 'collagen', 'ultraformer'] as const;
+const serviceKeys = ['botulinum', 'sculpting', 'lips', 'collagen', 'skinQuality', 'ultraformer'] as const;
 
 export function ServicesPage() {
   const { t, whatsAppUrl } = useLocale();
@@ -62,7 +64,7 @@ export function ServicesPage() {
               return (
                 <a
                   key={key}
-                  href={`#${key}`}
+                  href={`#${service.id}`}
                   className="flex items-center gap-2 px-4 py-2 rounded-full bg-muted hover:bg-secondary/50 transition-colors whitespace-nowrap text-sm font-medium"
                 >
                   <Icon size={16} />
@@ -86,7 +88,7 @@ export function ServicesPage() {
               return (
                 <section 
                   key={key} 
-                  id={key}
+                  id={service.id}
                   className="scroll-mt-32"
                 >
                   <div className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-start ${isEven ? '' : 'lg:flex-row-reverse'}`}>
