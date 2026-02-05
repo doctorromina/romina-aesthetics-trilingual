@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
-import { Syringe, Sparkles, Zap, Atom, ArrowRight, ArrowLeft } from 'lucide-react';
+import { Sparkles, PenTool, Heart, Atom, Droplets, Zap, ArrowRight, ArrowLeft } from 'lucide-react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { Button } from '@/components/ui/button';
 
 const serviceIcons = {
-  botulinum: Syringe,
-  sculpting: Sparkles,
+  botulinum: Sparkles,
+  sculpting: PenTool,
+  lips: Heart,
   collagen: Atom,
+  skinQuality: Droplets,
   ultraformer: Zap,
 };
 
@@ -18,7 +20,9 @@ export function ServicesPreview() {
   const services = [
     { key: 'botulinum' as const, anchor: 'botulinum' },
     { key: 'sculpting' as const, anchor: 'sculpting' },
+    { key: 'lips' as const, anchor: 'lips' },
     { key: 'collagen' as const, anchor: 'collagen' },
+    { key: 'skinQuality' as const, anchor: 'skin-quality' },
     { key: 'ultraformer' as const, anchor: 'ultraformer' },
   ];
 

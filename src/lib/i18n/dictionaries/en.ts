@@ -55,88 +55,108 @@ export const en = {
       botulinum: {
         id: 'botulinum',
         name: 'Botulinum Therapy',
-        shortDesc: 'Softens expression lines while preserving natural movement.',
-        fullDesc: 'Botulinum therapy relaxes specific facial muscles to soften expression lines — forehead wrinkles, frown lines, crow\'s feet. When done right, you keep your expressions. You just look more rested.',
+        shortDesc: 'Rejuvenates, lifts, and releases tension for a rested look.',
+        fullDesc: 'They searched for the elixir of youth for centuries. Turns out, it exists — and it\'s called botulinum therapy. This is one of the few treatments that truly rejuvenates: it smooths expression lines, provides lift, and releases tension. I work with three approaches: classic upper face treatment for forehead and frown lines, jaw muscle relaxation to reduce teeth grinding and slim the lower face, and full-face technique including neck and lymphatic drainage for overall freshness.',
         faq: [
           {
-            q: 'How is this different from "freezing" the face?',
-            a: 'The goal isn\'t to freeze anything. I use precise doses in specific areas to soften lines while keeping natural movement. You\'ll still look like you — just more relaxed.',
+            q: 'Is this the same as \'freezing\' the face?',
+            a: 'Not at all. The goal is to relax specific muscles while keeping natural expression. I use precise doses — you\'ll look rested, not frozen.',
+          },
+          {
+            q: 'What is bruxism treatment?',
+            a: 'Bruxism is teeth grinding, often from stress. Relaxing the jaw muscles reduces grinding, relieves tension headaches, and as a bonus — slims the lower face.',
           },
           {
             q: 'How long does it last?',
-            a: 'Typically 3-4 months. With regular treatments, some patients find they need less product over time as the muscles "learn" to relax.',
-          },
-          {
-            q: 'Is it painful?',
-            a: 'Most patients describe it as a slight pinch. The needles are very fine, and the treatment takes about 15-20 minutes.',
+            a: 'Typically 3-4 months. With regular treatments, many patients find they need less product over time.',
           },
         ],
       },
       sculpting: {
         id: 'sculpting',
         name: 'Facial Sculpting',
-        shortDesc: 'Restores volume and contours with a full-face approach.',
-        fullDesc: 'Facial sculpting uses hyaluronic acid fillers to restore volume, enhance contours, and address deep folds. I approach every face as a whole — understanding how cheeks, jawline, chin, and lips work together to create harmony.',
+        shortDesc: 'Restores anchor points and contours with surgical precision.',
+        fullDesc: 'Facial sculpting uses hyaluronic acid to restore the volumes we lose with age — the anchor points that keep your face looking like itself. With fillers of different densities, we can address bone structure or soft tissue, always with surgical precision. I work exclusively with premium brands that have FDA, EU, and Israeli Ministry of Health certification, sourced only from official distributors.',
         faq: [
           {
             q: 'What\'s the difference between fillers and Botox?',
-            a: 'Botulinum relaxes muscles. Fillers add volume. They work on different issues and often complement each other beautifully.',
+            a: 'Botulinum relaxes muscles. Fillers restore volume. Different tools for different needs — and they often work beautifully together.',
           },
           {
-            q: 'How long do fillers last?',
-            a: 'Depending on the area and product, 6-18 months. Lips tend to metabolize faster; cheekbones last longer.',
+            q: 'Can fillers be dissolved?',
+            a: 'Yes. Hyaluronic acid fillers can be dissolved with an enzyme if needed. This reversibility is one reason I prefer working with HA-based products.',
           },
           {
-            q: 'Can fillers be dissolved if I don\'t like the result?',
-            a: 'Yes. Hyaluronic acid fillers can be dissolved with an enzyme called hyaluronidase. It\'s one of the reasons I prefer working with HA-based products.',
+            q: 'How long do results last?',
+            a: '6-18 months depending on the area. Lips metabolize faster; cheekbones last longer.',
+          },
+        ],
+      },
+      lips: {
+        id: 'lips',
+        name: 'Lip Enhancement',
+        shortDesc: 'Proportional lip work that harmonizes with your smile.',
+        fullDesc: 'Lips sit at the center of your face and frame your smile. That\'s why proportion matters — lips should harmonize with your face and your smile, not exist separately. We can refine the contour, add subtle volume, reshape, or smooth the fine lines around the lips that add years to your appearance. Every treatment is planned with your unique facial proportions in mind.',
+        faq: [
+          {
+            q: 'Will my lips look natural?',
+            a: 'That\'s the goal. I focus on enhancing what you have, not creating something unrecognizable. Your lips should still look like your lips.',
           },
           {
-            q: 'Which areas can be treated?',
-            a: 'Cheeks, jawline, chin, lips, nasolabial folds, marionette lines, tear troughs, temples — essentially anywhere volume has been lost or contours need enhancement.',
+            q: 'What about lines around the lips?',
+            a: 'Those vertical lines — sometimes called smoker\'s lines — can be softened with very fine filler or combined with botulinum for best results.',
           },
         ],
       },
       collagen: {
         id: 'collagen',
         name: 'Collagen Stimulation',
-        shortDesc: 'Stimulates natural collagen production for firmer, youthful skin.',
-        fullDesc: 'Collagen stimulation treatments work beneath the surface — triggering your skin\'s own regeneration processes. Instead of adding volume, they improve skin quality, firmness, and elasticity over time. This is the foundation of the Longevity approach.',
+        shortDesc: 'Triggers your body\'s own regeneration for lasting results.',
+        fullDesc: 'Collagen stimulation triggers your body\'s own regeneration — rebuilding collagen for firmer skin, restoring ligament density, and even regenerating fat tissue. It works directly on connective tissue for deep, lasting improvement. I use polylactic acid (Sculptra, Aesthefill) and calcium hydroxylapatite (Radiesse) — biostimulators that work with your body, not just fill space. This is the foundation of the Longevity approach.',
         faq: [
           {
             q: 'How is this different from fillers?',
-            a: 'Fillers add volume immediately. Collagen stimulators work gradually — they trigger your body to produce its own collagen. The results are more subtle but also more natural and longer-lasting.',
+            a: 'Fillers add volume immediately. Biostimulators trigger your body to rebuild its own collagen over months. The results are more gradual but also more natural and longer-lasting.',
           },
           {
             q: 'When will I see results?',
-            a: 'Collagen production takes time. Most patients start noticing improvements after 4-6 weeks, with optimal results at 3-6 months.',
+            a: 'Collagen production takes time. Most patients notice improvement after 4-6 weeks, with optimal results at 3-6 months.',
+          },
+        ],
+      },
+      skinQuality: {
+        id: 'skin-quality',
+        name: 'Skin Quality',
+        shortDesc: 'Long-term investment in skin health and radiance.',
+        fullDesc: 'Beautiful skin requires consistent care — not just occasional treatments. I work with seasonal peels for renewal, biorevitalization for deep hydration and nourishment, and targeted ingredients: antioxidants, pigmentation regulators, amino acids that support collagen production. Think of it as a long-term investment in your skin\'s health and radiance.',
+        faq: [
+          {
+            q: 'How often do I need these treatments?',
+            a: 'It depends on your skin and goals. Typically, biorevitalization every 3-4 weeks in a course of 3-4 sessions, then maintenance. Peels are seasonal — usually fall and winter.',
           },
           {
-            q: 'Who is this best for?',
-            a: 'Anyone focused on skin quality and prevention rather than just filling lines. It\'s especially effective for those thinking long-term about how their skin will age.',
+            q: 'Is this the same as a facial at a spa?',
+            a: 'Medical-grade treatments penetrate deeper and use active ingredients at concentrations that spa facials can\'t match. The results are measurable, not just a temporary glow.',
           },
         ],
       },
       ultraformer: {
         id: 'ultraformer',
         name: 'ULTRAFORMER',
-        shortDesc: 'Non-invasive lifting through collagen stimulation.',
-        fullDesc: 'ULTRAFORMER uses focused ultrasound to tighten skin and stimulate collagen in the deep layers — the same layers a surgical facelift would address. No cuts, no downtime, gradual natural-looking lift over 2-3 months.',
+        shortDesc: 'SMAS lifting for double chin, hooded eyelids, and neck.',
+        fullDesc: 'ULTRAFORMER is a device for SMAS lifting — tightening the deep facial layer that surgical facelifts target. Excellent for double chin, hooded eyelids, nasolabial area, and neck. One session is usually enough — this is not a course treatment. Results develop gradually over 2-3 months as collagen rebuilds. Consultation required before booking.',
         faq: [
           {
-            q: 'How is this different from a surgical facelift?',
-            a: 'Surgery physically repositions tissue. ULTRAFORMER stimulates your skin to tighten itself from within. The results are more subtle but with zero downtime and no surgical risks.',
+            q: 'How is this different from surgery?',
+            a: 'Surgery physically repositions tissue. ULTRAFORMER stimulates your skin to tighten from within. Results are more subtle but with zero downtime and no surgical risks.',
           },
           {
-            q: 'Is anesthesia needed?',
-            a: 'No. Most patients feel warmth and some discomfort during treatment, but it\'s tolerable. We can use numbing cream for sensitive areas.',
+            q: 'Why only one session?',
+            a: 'ULTRAFORMER delivers focused ultrasound energy that triggers collagen production over months. One treatment is designed to give optimal results. We reassess after 6-12 months if needed.',
           },
           {
-            q: 'How many sessions do I need?',
-            a: 'Most patients see good results from a single session. Depending on your goals and skin condition, we might recommend a follow-up treatment after 12-18 months.',
-          },
-          {
-            q: 'How long do results last?',
-            a: 'Results continue to improve for 2-3 months as collagen builds, then last 1-2 years depending on your skin and lifestyle.',
+            q: 'Is it painful?',
+            a: 'You\'ll feel warmth and some discomfort, but it\'s tolerable. We can use numbing cream for sensitive areas.',
           },
         ],
       },
