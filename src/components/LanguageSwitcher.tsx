@@ -70,7 +70,7 @@ export function LanguageSwitcher() {
                   : 'text-muted-foreground hover:text-primary hover:bg-muted/30'}
               `}
               lang={lang.code}
-              dir={lang.code === 'he' ? 'rtl' : 'ltr'}
+              dir="ltr"
             >
               <span>{lang.label}</span>
               {currentLocale === lang.code && (
