@@ -1,7 +1,6 @@
-import { MapPin, MessageCircle, Mail, Send, Map } from 'lucide-react';
+import { MapPin, MessageCircle, Send, Map } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 import { useLocale } from '@/contexts/LocaleContext';
-import { LtrWrapper } from '@/components/LocalizedText';
 import { Button } from '@/components/ui/button';
 import { WazeLogo } from '@/components/icons/WazeLogo';
 
@@ -29,10 +28,15 @@ export function ContactPage() {
       {/* Hero */}
       <section className="py-16 md:py-20 gradient-hero">
         <div className="container mx-auto px-4 md:px-6 text-center">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="w-8 h-px bg-secondary" />
+            <div className="w-2 h-2 rounded-full bg-secondary" />
+            <div className="w-8 h-px bg-secondary" />
+          </div>
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-4">
             {t.contact.title}
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             {t.contact.subtitle}
           </p>
         </div>
@@ -40,92 +44,80 @@ export function ContactPage() {
 
       <section className="section-padding bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto">
-            {/* WhatsApp Booking Card */}
-            <div className="bg-[#25D366]/10 rounded-2xl p-8 border border-[#25D366]/20 mb-8">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-full bg-[#25D366] flex items-center justify-center">
-                  <MessageCircle className="w-8 h-8 text-white" />
+          <div className="max-w-2xl mx-auto space-y-6">
+            
+            {/* WhatsApp Card — clean, elegant */}
+            <a
+              href={whatsAppUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block rounded-2xl border border-border/50 bg-background p-6 md:p-8 hover:border-secondary/60 hover:shadow-lg hover:shadow-secondary/10 transition-all duration-500"
+            >
+              <div className="flex items-center gap-5">
+                <div className="w-14 h-14 rounded-full bg-[#25D366]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#25D366]/20 transition-colors duration-300">
+                  <MessageCircle className="w-7 h-7 text-[#25D366]" />
                 </div>
-                <div>
-                  <h2 className="text-2xl font-heading font-semibold text-primary">
+                <div className="flex-1 min-w-0">
+                  <h2 className="text-lg font-heading font-semibold text-primary mb-1">
                     {t.contact.bookViaWhatsApp}
                   </h2>
-                  <p className="text-muted-foreground">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {t.contact.bookDescription}
                   </p>
                 </div>
+                <div className="hidden sm:block text-muted-foreground/40 group-hover:text-primary/60 transition-colors">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
               </div>
-              <Button
-                asChild
-                size="lg"
-                className="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white text-lg py-6"
-              >
-                <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle size={22} className="me-3" />
-                  <span>WhatsApp</span>
-                </a>
-              </Button>
-            </div>
+            </a>
 
-            {/* Telegram Card — RU only */}
+            {/* Telegram Card — RU only, matching style */}
             {locale === 'ru' && (
-              <div className="bg-[#0088cc]/10 rounded-2xl p-8 border border-[#0088cc]/20 mb-8">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-full bg-[#0088cc] flex items-center justify-center">
-                    <Send className="w-8 h-8 text-white" />
+              <a
+                href={TELEGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-2xl border border-border/50 bg-background p-6 md:p-8 hover:border-secondary/60 hover:shadow-lg hover:shadow-secondary/10 transition-all duration-500"
+              >
+                <div className="flex items-center gap-5">
+                  <div className="w-14 h-14 rounded-full bg-[#0088cc]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#0088cc]/20 transition-colors duration-300">
+                    <Send className="w-7 h-7 text-[#0088cc]" />
                   </div>
-                  <div>
-                    <h2 className="text-2xl font-heading font-semibold text-primary">
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-lg font-heading font-semibold text-primary mb-1">
                       {t.telegram.title}
                     </h2>
-                    <p className="text-muted-foreground">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {t.telegram.description}
                     </p>
                   </div>
+                  <div className="hidden sm:block text-muted-foreground/40 group-hover:text-primary/60 transition-colors">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
-                <Button
-                  asChild
-                  size="lg"
-                  className="w-full bg-[#0088cc] hover:bg-[#0077b5] text-white text-lg py-6"
-                >
-                  <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
-                    <Send size={22} className="me-3" />
-                    {t.telegram.cta}
-                  </a>
-                </Button>
-              </div>
+              </a>
             )}
 
-            {/* Contact Info Cards */}
-            <div className="grid gap-4 mb-8">
-              <div className="bg-muted/30 rounded-2xl p-6 flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-secondary/50 flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-medium text-primary">{t.contact.info.email}</h3>
-                  <LtrWrapper className="text-muted-foreground">info@drromina.com</LtrWrapper>
-                </div>
-              </div>
-            </div>
-
             {/* Locations */}
-            <div>
-              <h3 className="font-heading font-semibold text-primary mb-6 text-xl">
+            <div className="pt-8">
+              <h3 className="font-heading font-semibold text-primary mb-6 text-xl text-center">
                 {t.locations.title}
               </h3>
               <div className="grid md:grid-cols-3 gap-6">
                 {t.locations.items.map((location, index) => (
                   <div 
                     key={index}
-                    className="bg-muted/30 rounded-2xl p-6 hover:bg-muted/50 transition-colors"
+                    className="rounded-2xl border border-border/40 p-6 hover:border-secondary/50 hover:shadow-md transition-all duration-300"
                   >
-                    <div className="w-12 h-12 rounded-full bg-secondary/50 flex items-center justify-center mx-auto mb-4">
-                      <MapPin className="w-6 h-6 text-primary" />
+                    <div className="w-10 h-10 rounded-full bg-secondary/40 flex items-center justify-center mx-auto mb-4">
+                      <MapPin className="w-5 h-5 text-primary" />
                     </div>
                     
-                    <h4 className="text-lg font-heading font-semibold text-primary mb-2 text-center">
+                    <h4 className="text-base font-heading font-semibold text-primary mb-2 text-center">
                       {location.name}
                     </h4>
                     
@@ -133,7 +125,7 @@ export function ContactPage() {
                       {location.address}
                     </p>
                     
-                    <p className="text-xs text-muted-foreground/80 mb-4 text-center">
+                    <p className="text-xs text-muted-foreground/70 mb-4 text-center">
                       {location.details}
                     </p>
 
@@ -146,7 +138,7 @@ export function ContactPage() {
                         className="flex-1"
                       >
                         <a href={location.mapsUrl} target="_blank" rel="noopener noreferrer">
-                          <Map size={16} className="me-1.5" />
+                          <Map size={14} className="me-1.5" />
                           <span>Google</span>
                         </a>
                       </Button>
@@ -157,23 +149,23 @@ export function ContactPage() {
                         className="flex-1 bg-[#33CCFF]/10 border-[#33CCFF]/30 hover:bg-[#33CCFF]/20"
                       >
                         <a href={getWazeUrl(wazeAddresses[index])} target="_blank" rel="noopener noreferrer">
-                          <WazeLogo size={16} className="me-1.5 text-[#33CCFF]" />
+                          <WazeLogo size={14} className="me-1.5 text-[#33CCFF]" />
                           <span>Waze</span>
                         </a>
                       </Button>
                     </div>
 
                     {/* QR Code */}
-                    <div className="flex flex-col items-center gap-2 pt-4 border-t border-border/50">
+                    <div className="flex flex-col items-center gap-2 pt-4 border-t border-border/30">
                       <div className="bg-white p-2 rounded-lg">
                         <QRCodeSVG 
                           value={location.mapsUrl} 
-                          size={80}
+                          size={72}
                           level="M"
                           includeMargin={false}
                         />
                       </div>
-                      <p className="text-xs text-muted-foreground/70">
+                      <p className="text-xs text-muted-foreground/60">
                         {t.locations.scanQR}
                       </p>
                     </div>
