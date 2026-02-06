@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const { t, getPath, locale } = useLocale();
+  const { t, getPath, locale, whatsAppUrl } = useLocale();
   const location = useLocation();
 
   const navItems = [
@@ -60,7 +60,7 @@ export function Header() {
           <div className="hidden md:flex items-center gap-4">
             <LanguageSwitcher />
             <Button asChild className="btn-primary text-sm">
-              <Link to={getPath('/contact')}>{t.hero.cta}</Link>
+              <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">{t.hero.cta}</a>
             </Button>
           </div>
 
@@ -104,7 +104,7 @@ export function Header() {
               className="btn-primary mt-4"
               onClick={() => setIsOpen(false)}
             >
-              <Link to={getPath('/contact')}>{t.hero.cta}</Link>
+              <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">{t.hero.cta}</a>
             </Button>
           </div>
         </div>

@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
-import { Instagram } from 'lucide-react';
+import { Instagram, MessageCircle } from 'lucide-react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { LogoWithTagline } from './Logo';
 import { LtrWrapper } from './LocalizedText';
+
+const WHATSAPP_URL = 'https://wa.me/972534706919';
 
 export function Footer() {
   const { t, getPath, locale } = useLocale();
@@ -29,15 +31,24 @@ export function Footer() {
           {/* Logo & Social */}
           <div className="lg:col-span-1">
             <LogoWithTagline />
-            <div className="mt-6 flex justify-center md:justify-start">
+            <div className="mt-6 flex gap-3 justify-center md:justify-start">
               <a
-                href="https://instagram.com/doctor_romina"
+                href="https://www.instagram.com/doctor_romina"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={20} className="text-primary" />
+              </a>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle size={20} className="text-primary" />
               </a>
             </div>
           </div>
