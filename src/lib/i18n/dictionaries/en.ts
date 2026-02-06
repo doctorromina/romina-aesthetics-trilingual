@@ -128,15 +128,15 @@ export const en = {
         id: 'skin-quality',
         name: 'Skin Quality',
         shortDesc: 'Long-term investment in skin health and radiance.',
-        fullDesc: 'Beautiful skin requires consistent care — not just occasional treatments. I work with seasonal peels for renewal, biorevitalization for deep hydration and nourishment, and targeted ingredients: antioxidants, pigmentation regulators, amino acids that support collagen production. Think of it as a long-term investment in your skin\'s health and radiance.',
+        fullDesc: 'Beautiful skin requires consistent care — not just occasional treatments. To maintain skin quality, I use biorevitalization — deep hydration and nourishment with hyaluronic acid cocktails enriched with antioxidants, amino acids, and pigmentation regulators. A particular favorite is polynucleotide therapy (PDRN) — derived from salmon DNA, it\'s one of the most powerful skin regenerators available today. Polynucleotides repair damaged cells, boost collagen and elastin production, and restore that healthy inner glow. Think of it as a long-term investment in your skin\'s health and radiance.',
         faq: [
           {
-            q: 'How often do I need these treatments?',
-            a: 'It depends on your skin and goals. Typically, biorevitalization every 3-4 weeks in a course of 3-4 sessions, then maintenance. Peels are seasonal — usually fall and winter.',
+            q: 'What are polynucleotides and how do they work?',
+            a: 'Polynucleotides (PDRN) are bioactive fragments derived from salmon DNA. They stimulate tissue repair, improve microcirculation, and boost your skin\'s natural production of collagen and elastin. The result is firmer, more hydrated, visibly healthier skin — from the inside out.',
           },
           {
-            q: 'Is this the same as a facial at a spa?',
-            a: 'Medical-grade treatments penetrate deeper and use active ingredients at concentrations that spa facials can\'t match. The results are measurable, not just a temporary glow.',
+            q: 'How often do I need these treatments?',
+            a: 'Biorevitalization is typically done every 3-4 weeks in a course of 3-4 sessions, then maintenance 2-3 times a year. Polynucleotide therapy follows a similar protocol — your personalized plan is determined during consultation.',
           },
         ],
       },
