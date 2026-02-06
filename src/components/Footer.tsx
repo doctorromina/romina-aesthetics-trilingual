@@ -28,10 +28,23 @@ export function Footer() {
       {/* Main Footer */}
       <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Logo & Social */}
+          {/* Logo, Avatar & Social */}
           <div className="lg:col-span-1">
             <LogoWithTagline />
-            <div className="mt-6 flex gap-3 justify-center md:justify-start">
+            
+            {/* Avatar */}
+            <div className="mt-4 flex justify-center md:justify-start">
+              <div className="w-16 h-16 rounded-full overflow-hidden shadow-md border-2 border-secondary/50">
+                <img 
+                  src="/images/dr-romina-bw.jpeg"
+                  alt="Dr. Romina Raykhshtat"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div className="mt-4 flex gap-3 justify-center md:justify-start">
               <a
                 href="https://www.instagram.com/doctor_romina"
                 target="_blank"
