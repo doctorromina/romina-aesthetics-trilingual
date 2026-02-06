@@ -63,32 +63,31 @@ export function HeroSection() {
               <img 
                 src="/images/dr-romina-hero.jpeg"
                 alt="Dr. Romina Raykhshtat"
-                className="w-full h-full object-cover object-top rounded-3xl"
+                className="w-full h-full object-cover object-top photo-organic-1"
                 loading="eager"
               />
               {/* Gradient edges that blend into background */}
-              <div className="absolute inset-0 rounded-3xl pointer-events-none"
+              <div className="absolute inset-0 photo-organic-1 pointer-events-none"
                 style={{
                   background: `
-                    linear-gradient(to right, hsl(var(--background)) 0%, transparent 25%, transparent 100%),
-                    linear-gradient(to left, hsl(var(--background)) 0%, transparent 20%, transparent 100%),
-                    linear-gradient(to bottom, hsl(var(--background)) 0%, transparent 15%, transparent 85%, hsl(var(--background)) 100%)
+                    linear-gradient(to right, hsl(var(--background)) 0%, transparent 20%, transparent 100%),
+                    linear-gradient(to left, hsl(var(--background)) 0%, transparent 15%, transparent 100%),
+                    linear-gradient(to bottom, hsl(var(--background)) 0%, transparent 12%, transparent 88%, hsl(var(--background)) 100%)
                   `
                 }}
               />
               {/* Stronger gradient on text side */}
-              <div className="absolute inset-0 rounded-3xl pointer-events-none rtl:hidden"
-                style={{ background: 'linear-gradient(to right, hsl(var(--background) / 0.6) 0%, transparent 30%)' }}
+              <div className="absolute inset-0 photo-organic-1 pointer-events-none rtl:hidden"
+                style={{ background: 'linear-gradient(to right, hsl(var(--background) / 0.5) 0%, transparent 25%)' }}
               />
-              <div className="absolute inset-0 rounded-3xl pointer-events-none hidden rtl:block"
-                style={{ background: 'linear-gradient(to left, hsl(var(--background) / 0.6) 0%, transparent 30%)' }}
+              <div className="absolute inset-0 photo-organic-1 pointer-events-none hidden rtl:block"
+                style={{ background: 'linear-gradient(to left, hsl(var(--background) / 0.5) 0%, transparent 25%)' }}
               />
             </div>
 
             {/* Brand accent decorations */}
             <div className="absolute -bottom-6 -start-6 w-28 h-28 rounded-full bg-secondary/40" />
             <div className="absolute -top-4 -end-4 w-16 h-16 rounded-full bg-secondary/25" />
-            {/* Corner accent line */}
             <div className="absolute -bottom-3 start-20 w-20 h-px bg-secondary/50" />
           </div>
 
@@ -98,10 +97,10 @@ export function HeroSection() {
               <img 
                 src="/images/dr-romina-hero.jpeg"
                 alt="Dr. Romina Raykhshtat"
-                className="w-full aspect-[3/4] object-cover object-top rounded-2xl"
+                className="w-full aspect-[3/4] object-cover object-top photo-organic-mobile"
                 loading="eager"
               />
-              <div className="absolute inset-0 rounded-2xl pointer-events-none"
+              <div className="absolute inset-0 photo-organic-mobile pointer-events-none"
                 style={{
                   background: `
                     linear-gradient(to bottom, hsl(var(--background)) 0%, transparent 10%, transparent 85%, hsl(var(--background)) 100%),

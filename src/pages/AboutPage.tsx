@@ -21,17 +21,18 @@ export function AboutPage() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Image */}
-            <div className="order-2 lg:order-1">
-              <div className="aspect-[3/4] rounded-3xl overflow-hidden relative max-w-md mx-auto shadow-2xl">
+            <div className="order-2 lg:order-1 relative">
+              <div className="aspect-[3/4] relative max-w-md mx-auto">
                 <img 
                   src="/images/dr-romina-about.jpeg"
                   alt="Dr. Romina Raykhshtat"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover photo-organic-2 shadow-2xl"
                   loading="eager"
                 />
-                {/* Decorative elements */}
-                <div className="absolute -bottom-4 -end-4 w-32 h-32 border-2 border-secondary rounded-3xl" />
               </div>
+              {/* Decorative elements */}
+              <div className="absolute -bottom-4 -end-4 w-32 h-32 border-2 border-secondary photo-organic-3" />
+              <div className="absolute -top-3 -start-3 w-12 h-12 rounded-full bg-secondary/25" />
             </div>
 
             {/* Content */}
@@ -114,7 +115,7 @@ export function AboutPage() {
             </div>
 
             {/* CTA with image */}
-            <div className="mt-12 relative rounded-2xl overflow-hidden">
+            <div className="mt-12 relative photo-organic-3 overflow-hidden">
               <img 
                 src="/images/dr-romina-cta.jpeg"
                 alt="Dr. Romina Raykhshtat"
