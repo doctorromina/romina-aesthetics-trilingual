@@ -43,10 +43,20 @@ export function ServicesPreview() {
           loading="lazy"
         />
       </div>
+      
+      {/* Periwinkle accent blobs */}
+      <div className="absolute bottom-0 start-0 w-72 h-72 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+          {/* Accent dot + line */}
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="w-8 h-px bg-secondary" />
+            <div className="w-2 h-2 rounded-full bg-secondary" />
+            <div className="w-8 h-px bg-secondary" />
+          </div>
+          
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">
             {t.services.title}
           </h2>
@@ -69,7 +79,7 @@ export function ServicesPreview() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Icon */}
-                <div className="w-14 h-14 rounded-2xl bg-secondary/50 flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
+                <div className="w-14 h-14 rounded-2xl bg-secondary/50 flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors border border-secondary/30">
                   <Icon className="w-7 h-7 text-primary" />
                 </div>
 

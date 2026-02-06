@@ -8,11 +8,14 @@ export function AboutPreview() {
   const Arrow = dir === 'rtl' ? ArrowLeft : ArrowRight;
 
   return (
-    <section className="section-padding bg-background">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="section-padding bg-background relative overflow-hidden">
+      {/* Subtle periwinkle accent */}
+      <div className="absolute top-0 end-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image */}
-          <div className="order-2 lg:order-1">
+          <div className="order-2 lg:order-1 relative">
             <div className="aspect-square rounded-3xl overflow-hidden relative shadow-xl">
               <img 
                 src="/images/dr-romina-about.jpeg"
@@ -20,13 +23,20 @@ export function AboutPreview() {
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-              {/* Decorative element */}
-              <div className="absolute -bottom-6 -end-6 w-32 h-32 border-2 border-secondary rounded-3xl" />
             </div>
+            {/* Decorative elements */}
+            <div className="absolute -bottom-4 -end-4 w-24 h-24 border-2 border-secondary/40 rounded-3xl" />
+            <div className="absolute -top-3 -start-3 w-10 h-10 rounded-full bg-secondary/30" />
           </div>
 
           {/* Content */}
           <div className="order-1 lg:order-2">
+            {/* Accent dot + line */}
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-2 h-2 rounded-full bg-secondary" />
+              <div className="w-10 h-px bg-secondary" />
+            </div>
+            
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-6">
               <span translate="no">{t.about.title}</span>
             </h2>

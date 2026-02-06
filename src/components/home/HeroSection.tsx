@@ -6,10 +6,30 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center gradient-hero overflow-hidden">
+      {/* Brand symbol watermark */}
+      <div className="absolute inset-inline-end-0 bottom-0 pointer-events-none select-none opacity-[0.03]">
+        <img 
+          src="/images/brand-symbol.svg" 
+          alt="" 
+          aria-hidden="true"
+          className="w-[500px] h-[500px] md:w-[600px] md:h-[600px]"
+        />
+      </div>
+
+      {/* Periwinkle accent blobs */}
+      <div className="absolute top-20 start-10 w-64 h-64 rounded-full bg-secondary/10 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 end-1/4 w-48 h-48 rounded-full bg-secondary/8 blur-2xl pointer-events-none" />
+
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Content */}
           <div className="max-w-xl animate-fade-in-up">
+            {/* Accent dot + line */}
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-2 h-2 rounded-full bg-secondary" />
+              <div className="w-12 h-px bg-secondary" />
+            </div>
+
             {/* Tagline */}
             <p className="text-xs tracking-[0.3em] text-muted-foreground mb-4 font-body uppercase">
               {t.hero.tagline}
@@ -56,24 +76,20 @@ export function HeroSection() {
                   `
                 }}
               />
-              {/* RTL: flip the stronger gradient to the text side */}
+              {/* Stronger gradient on text side */}
               <div className="absolute inset-0 rounded-3xl pointer-events-none rtl:hidden"
-                style={{
-                  background: 'linear-gradient(to right, hsl(var(--background) / 0.6) 0%, transparent 30%)'
-                }}
+                style={{ background: 'linear-gradient(to right, hsl(var(--background) / 0.6) 0%, transparent 30%)' }}
               />
               <div className="absolute inset-0 rounded-3xl pointer-events-none hidden rtl:block"
-                style={{
-                  background: 'linear-gradient(to left, hsl(var(--background) / 0.6) 0%, transparent 30%)'
-                }}
+                style={{ background: 'linear-gradient(to left, hsl(var(--background) / 0.6) 0%, transparent 30%)' }}
               />
             </div>
 
-            {/* Accent decorations with brand color */}
-            <div className="absolute -bottom-6 -start-6 w-28 h-28 rounded-full opacity-40" 
-              style={{ background: 'hsl(var(--secondary))' }} />
-            <div className="absolute -top-4 -end-4 w-16 h-16 rounded-full opacity-25"
-              style={{ background: 'hsl(var(--secondary))' }} />
+            {/* Brand accent decorations */}
+            <div className="absolute -bottom-6 -start-6 w-28 h-28 rounded-full bg-secondary/40" />
+            <div className="absolute -top-4 -end-4 w-16 h-16 rounded-full bg-secondary/25" />
+            {/* Corner accent line */}
+            <div className="absolute -bottom-3 start-20 w-20 h-px bg-secondary/50" />
           </div>
 
           {/* Mobile Hero Photo */}
@@ -93,6 +109,8 @@ export function HeroSection() {
                   `
                 }}
               />
+              {/* Mobile accent */}
+              <div className="absolute -bottom-3 start-4 w-12 h-12 rounded-full bg-secondary/30" />
             </div>
           </div>
         </div>
