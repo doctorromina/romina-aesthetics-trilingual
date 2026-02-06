@@ -39,30 +39,59 @@ export function HeroSection() {
 
           {/* Hero Photo */}
           <div className="relative hidden lg:block animate-fade-in">
-            <div className="aspect-[4/5] rounded-3xl overflow-hidden relative shadow-2xl">
+            <div className="aspect-[4/5] relative">
               <img 
                 src="/images/dr-romina-hero.jpeg"
                 alt="Dr. Romina Raykhshtat"
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-top rounded-3xl"
                 loading="eager"
               />
-              {/* Soft gradient overlay on text side */}
-              <div className="absolute inset-0 bg-gradient-to-r rtl:bg-gradient-to-l from-background/30 via-transparent to-transparent" />
+              {/* Gradient edges that blend into background */}
+              <div className="absolute inset-0 rounded-3xl pointer-events-none"
+                style={{
+                  background: `
+                    linear-gradient(to right, hsl(var(--background)) 0%, transparent 25%, transparent 100%),
+                    linear-gradient(to left, hsl(var(--background)) 0%, transparent 20%, transparent 100%),
+                    linear-gradient(to bottom, hsl(var(--background)) 0%, transparent 15%, transparent 85%, hsl(var(--background)) 100%)
+                  `
+                }}
+              />
+              {/* RTL: flip the stronger gradient to the text side */}
+              <div className="absolute inset-0 rounded-3xl pointer-events-none rtl:hidden"
+                style={{
+                  background: 'linear-gradient(to right, hsl(var(--background) / 0.6) 0%, transparent 30%)'
+                }}
+              />
+              <div className="absolute inset-0 rounded-3xl pointer-events-none hidden rtl:block"
+                style={{
+                  background: 'linear-gradient(to left, hsl(var(--background) / 0.6) 0%, transparent 30%)'
+                }}
+              />
             </div>
 
-            {/* Accent decoration */}
-            <div className="absolute -bottom-4 -start-4 w-24 h-24 bg-secondary rounded-full opacity-50" />
-            <div className="absolute -top-4 -end-4 w-16 h-16 bg-secondary rounded-full opacity-30" />
+            {/* Accent decorations with brand color */}
+            <div className="absolute -bottom-6 -start-6 w-28 h-28 rounded-full opacity-40" 
+              style={{ background: 'hsl(var(--secondary))' }} />
+            <div className="absolute -top-4 -end-4 w-16 h-16 rounded-full opacity-25"
+              style={{ background: 'hsl(var(--secondary))' }} />
           </div>
 
           {/* Mobile Hero Photo */}
           <div className="lg:hidden animate-fade-in">
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl max-w-sm mx-auto">
+            <div className="relative max-w-sm mx-auto">
               <img 
                 src="/images/dr-romina-hero.jpeg"
                 alt="Dr. Romina Raykhshtat"
-                className="w-full h-full object-cover object-top"
+                className="w-full aspect-[3/4] object-cover object-top rounded-2xl"
                 loading="eager"
+              />
+              <div className="absolute inset-0 rounded-2xl pointer-events-none"
+                style={{
+                  background: `
+                    linear-gradient(to bottom, hsl(var(--background)) 0%, transparent 10%, transparent 85%, hsl(var(--background)) 100%),
+                    linear-gradient(to right, hsl(var(--background) / 0.3) 0%, transparent 15%, transparent 85%, hsl(var(--background) / 0.3) 100%)
+                  `
+                }}
               />
             </div>
           </div>
