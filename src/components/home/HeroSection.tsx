@@ -61,29 +61,25 @@ export function HeroSection() {
 
           </div>
 
-          {/* Hero Photo — Desktop with parallax, premium blend */}
+          {/* Hero Photo — Desktop with parallax, no borders, just face */}
           <div ref={parallaxRef} className="relative hidden lg:block">
-            <div className="aspect-[4/4] relative hero-photo-reveal max-h-[520px]">
+            <div className="relative hero-photo-reveal max-h-[540px]">
               <img 
                 src="/images/romina-portrait.jpeg"
                 alt="Dr. Romina Raykhshtat"
-                className="w-full h-full object-cover object-top rounded-[2rem]"
+                className="w-full h-full object-cover object-top"
                 loading="eager"
               />
-              {/* Soft edge gradient blending into background */}
-              <div className="absolute inset-0 rounded-[2rem] pointer-events-none"
+              {/* Feathered edges that dissolve the photo into the background */}
+              <div className="absolute inset-0 pointer-events-none"
                 style={{
                   background: `
-                    linear-gradient(to right, hsl(var(--background)) 0%, transparent 12%, transparent 88%, hsl(var(--background)) 100%),
-                    linear-gradient(to bottom, hsl(var(--background)) 0%, transparent 8%, transparent 90%, hsl(var(--background)) 100%)
+                    linear-gradient(to right, hsl(var(--background)) 0%, transparent 18%, transparent 82%, hsl(var(--background)) 100%),
+                    linear-gradient(to bottom, hsl(var(--background)) 0%, transparent 10%, transparent 85%, hsl(var(--background)) 100%)
                   `
                 }}
               />
             </div>
-
-            {/* Brand accent decorations — staggered */}
-            <div className="absolute -bottom-4 -start-4 w-20 h-20 rounded-full bg-secondary/30 hero-text-reveal" style={{ animationDelay: '0.8s' }} />
-            <div className="absolute -top-3 -end-3 w-12 h-12 rounded-full bg-secondary/20 hero-text-reveal" style={{ animationDelay: '1s' }} />
           </div>
 
           {/* Mobile Hero Photo */}
@@ -92,18 +88,17 @@ export function HeroSection() {
               <img 
                 src="/images/romina-portrait.jpeg"
                 alt="Dr. Romina Raykhshtat"
-                className="w-full aspect-[3/4] object-cover object-top rounded-2xl"
+                className="w-full aspect-[3/4] object-cover object-top"
                 loading="eager"
               />
-              <div className="absolute inset-0 rounded-2xl pointer-events-none"
+              <div className="absolute inset-0 pointer-events-none"
                 style={{
                   background: `
-                    linear-gradient(to bottom, hsl(var(--background)) 0%, transparent 8%, transparent 88%, hsl(var(--background)) 100%),
-                    linear-gradient(to right, hsl(var(--background) / 0.2) 0%, transparent 10%, transparent 90%, hsl(var(--background) / 0.2) 100%)
+                    linear-gradient(to bottom, hsl(var(--background)) 0%, transparent 6%, transparent 82%, hsl(var(--background)) 100%),
+                    linear-gradient(to right, hsl(var(--background)) 0%, transparent 8%, transparent 92%, hsl(var(--background)) 100%)
                   `
                 }}
               />
-              <div className="absolute -bottom-3 start-4 w-12 h-12 rounded-full bg-secondary/30" />
             </div>
           </div>
         </div>
