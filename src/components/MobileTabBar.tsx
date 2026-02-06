@@ -80,7 +80,7 @@ export function MobileTabBar() {
                 ${active ? 'text-primary' : 'text-muted-foreground'}
               `}
             >
-              <Icon size={20} strokeWidth={active ? 2.2 : 1.8} />
+              <Icon size={18} strokeWidth={active ? 2 : 1.6} />
               <span className={`text-[10px] leading-tight ${active ? 'font-semibold' : 'font-medium'}`}>
                 {tab.label}
               </span>

@@ -46,8 +46,8 @@ export function LocationsSection() {
               key={index}
               className="bg-muted/30 rounded-2xl p-6 hover:bg-muted/50 transition-colors border border-border/30"
             >
-              <div className="w-12 h-12 rounded-full bg-secondary/50 flex items-center justify-center mx-auto mb-4 border border-secondary/30">
-                <MapPin className="w-6 h-6 text-primary" />
+              <div className="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center mx-auto mb-4 border border-secondary/30">
+                <MapPin className="w-5 h-5 text-primary" strokeWidth={1.8} />
               </div>
               
               <h3 className="text-lg font-heading font-semibold text-primary mb-2 text-center">
@@ -71,7 +71,7 @@ export function LocationsSection() {
                   className="flex-1"
                 >
                   <a href={location.mapsUrl} target="_blank" rel="noopener noreferrer">
-                    <Map size={16} className="me-1.5" />
+                    <Map size={14} className="me-1.5" />
                     <span>Google</span>
                   </a>
                 </Button>
@@ -82,7 +82,7 @@ export function LocationsSection() {
                   className="flex-1 bg-[#33CCFF]/10 border-[#33CCFF]/30 hover:bg-[#33CCFF]/20"
                 >
                   <a href={getWazeUrl(wazeAddresses[index])} target="_blank" rel="noopener noreferrer">
-                    <WazeLogo size={16} className="me-1.5 text-[#33CCFF]" />
+                    <WazeLogo size={14} className="me-1.5 text-[#33CCFF]" />
                     <span>Waze</span>
                   </a>
                 </Button>
