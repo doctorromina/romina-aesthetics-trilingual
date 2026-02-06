@@ -56,30 +56,39 @@ export function LanguageSwitcher() {
         <span className="text-xs font-medium tracking-wide">{currentLang?.short}</span>
       </button>
 
-      {open && (
-        <div className="absolute top-full mt-2 end-0 bg-background border border-border/60 rounded-xl shadow-lg shadow-black/5 py-1.5 min-w-[140px] z-50 animate-fade-in">
-          {languages.map((lang) => (
-            <Link
-              key={lang.code}
-              to={getLocalizedPath(getCleanPath(), lang.code)}
-              onClick={() => handleLanguageSwitch(lang.code)}
-              className={`
-                flex items-center justify-between px-4 py-2 text-sm transition-colors
-                ${currentLocale === lang.code
-                  ? 'text-primary font-medium bg-muted/40'
-                  : 'text-muted-foreground hover:text-primary hover:bg-muted/30'}
-              `}
-              lang={lang.code}
-              dir="ltr"
-            >
-              <span>{lang.label}</span>
-              {currentLocale === lang.code && (
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-              )}
-            </Link>
-          ))}
-        </div>
-      )}
+      <div
+        className={`
+          absolute top-full mt-2 end-0 bg-background border border-border/60 rounded-xl 
+          shadow-lg shadow-black/5 py-1.5 min-w-[140px] z-50
+          origin-top transition-all duration-200 ease-out
+          ${open 
+            ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto' 
+            : 'opacity-0 scale-95 -translate-y-1 pointer-events-none'}
+        `}
+      >
+        {languages.map((lang, index) => (
+          <Link
+            key={lang.code}
+            to={getLocalizedPath(getCleanPath(), lang.code)}
+            onClick={() => handleLanguageSwitch(lang.code)}
+            className={`
+              flex items-center justify-between px-4 py-2 text-sm transition-all duration-200
+              ${open ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'}
+              ${currentLocale === lang.code
+                ? 'text-primary font-medium bg-muted/40'
+                : 'text-muted-foreground hover:text-primary hover:bg-muted/30'}
+            `}
+            style={{ transitionDelay: open ? `${index * 50}ms` : '0ms' }}
+            lang={lang.code}
+            dir="ltr"
+          >
+            <span>{lang.label}</span>
+            {currentLocale === lang.code && (
+              <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
+            )}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
