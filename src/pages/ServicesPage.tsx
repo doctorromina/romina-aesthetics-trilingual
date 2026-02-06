@@ -42,8 +42,19 @@ export function ServicesPage() {
       <title>{t.services.title} | {t.meta.title}</title>
       
       {/* Hero */}
-      <section className="py-16 md:py-20 gradient-hero">
-        <div className="container mx-auto px-4 md:px-6 text-center">
+      <section className="py-16 md:py-20 gradient-hero relative overflow-hidden">
+        {/* Decorative accents */}
+        <div className="absolute top-0 end-0 w-72 h-72 rounded-full bg-secondary/10 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 start-0 w-48 h-48 rounded-full bg-secondary/8 blur-2xl pointer-events-none" />
+        
+        <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
+          {/* Accent dot + line */}
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="w-8 h-px bg-secondary" />
+            <div className="w-2 h-2 rounded-full bg-secondary" />
+            <div className="w-8 h-px bg-secondary" />
+          </div>
+          
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">
             {t.services.title}
           </h1>
@@ -77,8 +88,18 @@ export function ServicesPage() {
       </nav>
 
       {/* Services */}
-      <div className="section-padding bg-background">
-        <div className="container mx-auto px-4 md:px-6">
+      <div className="section-padding bg-background relative overflow-hidden">
+        {/* Subtle brand symbol watermark */}
+        <div className="absolute top-1/4 end-0 pointer-events-none select-none opacity-[0.02]">
+          <img 
+            src="/images/brand-symbol.svg" 
+            alt="" 
+            aria-hidden="true"
+            className="w-[400px] h-[400px]"
+          />
+        </div>
+        
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="space-y-24">
             {serviceKeys.map((key, index) => {
               const Icon = serviceIcons[key];
@@ -89,18 +110,22 @@ export function ServicesPage() {
                 <section 
                   key={key} 
                   id={service.id}
-                  className="scroll-mt-32"
+                  className="scroll-mt-32 relative"
                 >
                   <div className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-start ${isEven ? '' : 'lg:flex-row-reverse'}`}>
                     {/* Content */}
                     <div className={isEven ? 'lg:order-1' : 'lg:order-2'}>
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="w-14 h-14 rounded-2xl bg-secondary/50 flex items-center justify-center">
+                        <div className="w-14 h-14 rounded-2xl bg-secondary/50 flex items-center justify-center border border-secondary/30">
                           <Icon className="w-7 h-7 text-primary" />
                         </div>
-                        <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary">
-                          {service.name}
-                        </h2>
+                        <div>
+                          <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary">
+                            {service.name}
+                          </h2>
+                          {/* Small accent line under title */}
+                          <div className="w-10 h-0.5 bg-secondary mt-2 rounded-full" />
+                        </div>
                       </div>
 
                       <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
@@ -116,8 +141,9 @@ export function ServicesPage() {
 
                     {/* FAQ */}
                     <div className={`${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
-                      <div className="bg-muted/20 rounded-2xl p-6 md:p-8">
-                        <h3 className="font-heading font-semibold text-primary mb-6 text-lg">
+                      <div className="bg-muted/20 rounded-2xl p-6 md:p-8 border border-border/30">
+                        <h3 className="font-heading font-semibold text-primary mb-6 text-lg flex items-center gap-2">
+                          <div className="w-1.5 h-5 bg-secondary rounded-full" />
                           FAQ
                         </h3>
                         
@@ -143,7 +169,11 @@ export function ServicesPage() {
 
                   {/* Divider */}
                   {index < serviceKeys.length - 1 && (
-                    <div className="accent-line mt-24" />
+                    <div className="flex items-center gap-4 mt-24">
+                      <div className="flex-1 h-px bg-gradient-to-r from-transparent via-secondary/40 to-transparent" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-secondary/50" />
+                      <div className="flex-1 h-px bg-gradient-to-r from-transparent via-secondary/40 to-transparent" />
+                    </div>
                   )}
                 </section>
               );

@@ -20,10 +20,20 @@ export function LocationsSection() {
   ];
 
   return (
-    <section className="section-padding bg-background">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="section-padding bg-background relative overflow-hidden">
+      {/* Accent blob */}
+      <div className="absolute top-0 end-0 w-64 h-64 bg-secondary/8 rounded-full blur-3xl pointer-events-none" />
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
+          {/* Accent dot + line */}
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="w-8 h-px bg-secondary" />
+            <div className="w-2 h-2 rounded-full bg-secondary" />
+            <div className="w-8 h-px bg-secondary" />
+          </div>
+          
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">
             {t.locations.title}
           </h2>
@@ -34,9 +44,9 @@ export function LocationsSection() {
           {t.locations.items.map((location, index) => (
             <div 
               key={index}
-              className="bg-muted/30 rounded-2xl p-6 hover:bg-muted/50 transition-colors"
+              className="bg-muted/30 rounded-2xl p-6 hover:bg-muted/50 transition-colors border border-border/30"
             >
-              <div className="w-12 h-12 rounded-full bg-secondary/50 flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 rounded-full bg-secondary/50 flex items-center justify-center mx-auto mb-4 border border-secondary/30">
                 <MapPin className="w-6 h-6 text-primary" />
               </div>
               
