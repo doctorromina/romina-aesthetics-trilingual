@@ -57,8 +57,9 @@ export function Header() {
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
             <LanguageSwitcher />
+            <div className="w-px h-5 bg-border/60" />
             <Button asChild size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6 font-medium tracking-wider text-xs uppercase shadow-md hover:shadow-lg transition-all duration-300">
               <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">{t.hero.cta}</a>
             </Button>
@@ -95,7 +96,8 @@ export function Header() {
               </Link>
             ))}
             
-            <div className="pt-4">
+            <div className="pt-6 flex flex-col items-center gap-4">
+              <div className="w-12 h-px bg-border/60" />
               <LanguageSwitcher />
             </div>
             
