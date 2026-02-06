@@ -1,29 +1,11 @@
 import { useLocale } from '@/contexts/LocaleContext';
 import { Button } from '@/components/ui/button';
-import { FaceLineArt } from '@/components/FaceLineArt';
 
 export function HeroSection() {
   const { t, whatsAppUrl } = useLocale();
 
   return (
     <section className="relative min-h-[90vh] flex items-center gradient-hero overflow-hidden">
-      {/* Background Line Art - right side, subtle watermark */}
-      <div className="absolute inset-inline-end-0 top-1/2 -translate-y-1/2 pointer-events-none select-none opacity-[0.06]">
-        <FaceLineArt 
-          className="w-[400px] h-[500px] md:w-[500px] md:h-[650px] text-[#434951]" 
-        />
-      </div>
-
-      {/* Background Decorative R */}
-      <div className="absolute inset-inline-end-0 top-1/2 -translate-y-1/2 opacity-[0.02] pointer-events-none select-none">
-        <span 
-          className="text-[40rem] font-heading font-bold text-primary leading-none"
-          aria-hidden="true"
-        >
-          R
-        </span>
-      </div>
-
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Content */}
@@ -55,33 +37,34 @@ export function HeroSection() {
             </Button>
           </div>
 
-          {/* Image Placeholder */}
+          {/* Hero Photo */}
           <div className="relative hidden lg:block animate-fade-in">
-            <div className="aspect-[4/5] bg-secondary/30 rounded-3xl overflow-hidden relative">
-              {/* Placeholder for professional photo */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-muted-foreground/50">
-                  <div className="w-24 h-24 rounded-full bg-secondary/50 mx-auto mb-4" />
-                  <p className="text-sm">Professional Photo</p>
-                </div>
-              </div>
-
-              {/* Decorative line art overlay */}
-              <svg 
-                className="absolute inset-0 w-full h-full opacity-10"
-                viewBox="0 0 400 500"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.5"
-              >
-                <path d="M200 50 Q250 100, 280 200 Q300 300, 250 400 Q220 450, 200 480" />
-                <circle cx="200" cy="100" r="30" />
-              </svg>
+            <div className="aspect-[4/5] rounded-3xl overflow-hidden relative shadow-2xl">
+              <img 
+                src="/images/dr-romina-hero.jpeg"
+                alt="Dr. Romina Raykhshtat"
+                className="w-full h-full object-cover object-top"
+                loading="eager"
+              />
+              {/* Soft gradient overlay on text side */}
+              <div className="absolute inset-0 bg-gradient-to-r rtl:bg-gradient-to-l from-background/30 via-transparent to-transparent" />
             </div>
 
             {/* Accent decoration */}
             <div className="absolute -bottom-4 -start-4 w-24 h-24 bg-secondary rounded-full opacity-50" />
             <div className="absolute -top-4 -end-4 w-16 h-16 bg-secondary rounded-full opacity-30" />
+          </div>
+
+          {/* Mobile Hero Photo */}
+          <div className="lg:hidden animate-fade-in">
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl max-w-sm mx-auto">
+              <img 
+                src="/images/dr-romina-hero.jpeg"
+                alt="Dr. Romina Raykhshtat"
+                className="w-full h-full object-cover object-top"
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
       </div>

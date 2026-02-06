@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { locales, Locale, getLocalizedPath } from '@/lib/i18n';
 import { useLocale } from '@/contexts/LocaleContext';
+import { setLocaleCookie } from '@/hooks/useLanguageDetection';
 
 export function LanguageSwitcher() {
   const location = useLocation();
@@ -18,6 +19,11 @@ export function LanguageSwitcher() {
     { code: 'ru', label: 'Русский' },
   ];
 
+  const handleLanguageSwitch = (locale: Locale) => {
+    // Save the manual choice to cookie — overrides auto-detection
+    setLocaleCookie(locale);
+  };
+
   return (
     <div className="flex items-center gap-1 text-sm">
       {languages.map((lang, index) => (
@@ -25,6 +31,7 @@ export function LanguageSwitcher() {
           {index > 0 && <span className="text-muted-foreground mx-1">|</span>}
           <Link
             to={getLocalizedPath(getCleanPath(), lang.code)}
+            onClick={() => handleLanguageSwitch(lang.code)}
             className={`
               px-1 py-0.5 rounded transition-colors
               ${currentLocale === lang.code 

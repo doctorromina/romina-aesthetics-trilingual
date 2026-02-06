@@ -11,6 +11,7 @@ import { ServicesPage } from "@/pages/ServicesPage";
 import { ContactPage } from "@/pages/ContactPage";
 import { PrivacyPage } from "@/pages/PrivacyPage";
 import { TermsPage } from "@/pages/TermsPage";
+import { LanguageDetector } from "@/components/LanguageDetector";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <LocaleProvider>
+          <LanguageDetector />
           <Routes>
             {/* Hebrew Routes (default) */}
             <Route element={<Layout />}>

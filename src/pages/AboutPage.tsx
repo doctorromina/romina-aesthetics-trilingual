@@ -1,6 +1,5 @@
 import { useLocale } from '@/contexts/LocaleContext';
 import { Button } from '@/components/ui/button';
-import { FaceLineArt } from '@/components/FaceLineArt';
 
 export function AboutPage() {
   const { t, whatsAppUrl } = useLocale();
@@ -19,23 +18,17 @@ export function AboutPage() {
       
       {/* Hero Section */}
       <section className="relative section-padding gradient-hero overflow-hidden">
-        {/* Background Line Art - right side, subtle watermark */}
-        <div className="absolute inset-inline-end-0 top-1/2 -translate-y-1/2 pointer-events-none select-none opacity-[0.06]">
-          <FaceLineArt className="w-[400px] h-[600px] text-[#434951]" />
-        </div>
-
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Image */}
             <div className="order-2 lg:order-1">
-              <div className="aspect-[3/4] bg-secondary/20 rounded-3xl overflow-hidden relative max-w-md mx-auto">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-muted-foreground/50">
-                    <div className="w-32 h-32 rounded-full bg-secondary/50 mx-auto mb-4" />
-                    <p className="text-sm" translate="no">Dr. Romina</p>
-                    <p className="text-xs mt-1">Photo Placeholder</p>
-                  </div>
-                </div>
+              <div className="aspect-[3/4] rounded-3xl overflow-hidden relative max-w-md mx-auto shadow-2xl">
+                <img 
+                  src="/images/dr-romina-about.jpeg"
+                  alt="Dr. Romina Raykhshtat"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
                 {/* Decorative elements */}
                 <div className="absolute -bottom-4 -end-4 w-32 h-32 border-2 border-secondary rounded-3xl" />
               </div>
@@ -120,13 +113,22 @@ export function AboutPage() {
               </dl>
             </div>
 
-            {/* CTA */}
-            <div className="text-center mt-12">
-              <Button asChild size="lg" className="btn-primary">
-                <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">
-                  {t.about.cta}
-                </a>
-              </Button>
+            {/* CTA with image */}
+            <div className="mt-12 relative rounded-2xl overflow-hidden">
+              <img 
+                src="/images/dr-romina-cta.jpeg"
+                alt="Dr. Romina Raykhshtat"
+                className="w-full h-64 md:h-80 object-cover object-top"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent" />
+              <div className="absolute bottom-0 inset-x-0 p-8 text-center">
+                <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
+                  <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">
+                    {t.about.cta}
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>

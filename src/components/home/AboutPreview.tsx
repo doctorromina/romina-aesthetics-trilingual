@@ -13,17 +13,13 @@ export function AboutPreview() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image */}
           <div className="order-2 lg:order-1">
-            <div className="aspect-square bg-secondary/20 rounded-3xl overflow-hidden relative">
-              {/* Placeholder for professional photo */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-muted-foreground/50">
-                  <div className="w-20 h-20 rounded-full bg-secondary/50 mx-auto mb-4" />
-                  <p className="text-sm">
-                    <span translate="no">Dr. Romina</span>
-                  </p>
-                </div>
-              </div>
-              
+            <div className="aspect-square rounded-3xl overflow-hidden relative shadow-xl">
+              <img 
+                src="/images/dr-romina-about.jpeg"
+                alt="Dr. Romina Raykhshtat"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
               {/* Decorative element */}
               <div className="absolute -bottom-6 -end-6 w-32 h-32 border-2 border-secondary rounded-3xl" />
             </div>

@@ -32,8 +32,19 @@ export function ServicesPreview() {
   };
 
   return (
-    <section className="section-padding bg-muted/30">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="section-padding bg-muted/30 relative overflow-hidden">
+      {/* Subtle background accent image */}
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none select-none">
+        <img 
+          src="/images/dr-romina-services.jpeg"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">
