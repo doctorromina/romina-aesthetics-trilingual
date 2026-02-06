@@ -98,17 +98,17 @@ export function HeroSection() {
           <div ref={parallaxRef} className="relative hidden lg:flex justify-center">
             {/* Decorative ring behind photo */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-[400px] h-[400px] rounded-full border border-secondary/30" />
+              <div className="w-[480px] h-[580px] rounded-full border border-secondary/30" />
             </div>
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-[440px] h-[440px] photo-organic-3 border border-secondary/15" />
+              <div className="w-[520px] h-[620px] photo-organic-3 border border-secondary/15" />
             </div>
 
             <div className="relative hero-photo-reveal">
               <img 
                 src="/images/romina-portrait.jpeg"
                 alt="Dr. Romina Raykhshtat"
-                className="w-[380px] h-[380px] object-cover object-top photo-organic-2 shadow-2xl shadow-secondary/20"
+                className="w-[440px] h-[560px] object-cover object-top photo-organic-2 shadow-2xl shadow-secondary/20"
                 loading="eager"
               />
             </div>
