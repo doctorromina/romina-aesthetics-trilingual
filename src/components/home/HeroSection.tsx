@@ -61,43 +61,26 @@ export function HeroSection() {
 
           </div>
 
-          {/* Hero Photo — Desktop with parallax, no borders, just face */}
+          {/* Hero Photo — Desktop with parallax, seamless fade */}
           <div ref={parallaxRef} className="relative hidden lg:block">
-            <div className="relative hero-photo-reveal max-h-[540px]">
+            <div className="relative hero-photo-reveal max-h-[540px] hero-fade-mask">
               <img 
                 src="/images/romina-portrait.jpeg"
                 alt="Dr. Romina Raykhshtat"
                 className="w-full h-full object-cover object-top"
                 loading="eager"
               />
-              {/* Feathered edges that dissolve the photo into the background */}
-              <div className="absolute inset-0 pointer-events-none"
-                style={{
-                  background: `
-                    linear-gradient(to right, hsl(var(--background)) 0%, transparent 18%, transparent 82%, hsl(var(--background)) 100%),
-                    linear-gradient(to bottom, hsl(var(--background)) 0%, transparent 10%, transparent 85%, hsl(var(--background)) 100%)
-                  `
-                }}
-              />
             </div>
           </div>
 
           {/* Mobile Hero Photo */}
           <div className="lg:hidden">
-            <div className="relative max-w-sm mx-auto hero-photo-reveal">
+            <div className="relative max-w-sm mx-auto hero-photo-reveal hero-fade-mask-mobile">
               <img 
                 src="/images/romina-portrait.jpeg"
                 alt="Dr. Romina Raykhshtat"
                 className="w-full aspect-[3/4] object-cover object-top"
                 loading="eager"
-              />
-              <div className="absolute inset-0 pointer-events-none"
-                style={{
-                  background: `
-                    linear-gradient(to bottom, hsl(var(--background)) 0%, transparent 6%, transparent 82%, hsl(var(--background)) 100%),
-                    linear-gradient(to right, hsl(var(--background)) 0%, transparent 8%, transparent 92%, hsl(var(--background)) 100%)
-                  `
-                }}
               />
             </div>
           </div>
