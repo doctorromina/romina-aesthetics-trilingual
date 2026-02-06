@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Heebo:wght@300;400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Heebo:wght@300;400;500;600;700&family=Suez+One&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -49,7 +49,7 @@
     /* Typography */
     --font-heading-en: 'Playfair Display', Georgia, serif;
     --font-body-en: 'Inter', system-ui, sans-serif;
-    --font-heading-he: 'Frank Ruhl Libre', 'Heebo', Georgia, serif;
+    --font-heading-he: 'Suez One', 'Heebo', Georgia, serif;
     --font-body-he: 'Heebo', system-ui, sans-serif;
     
     /* Spacing */
