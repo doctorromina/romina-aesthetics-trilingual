@@ -76,7 +76,7 @@ export function AboutPage() {
               </div>
               <div className="lg:col-span-2 hidden lg:block">
                 <img 
-                  src="/images/romina-portrait.jpeg"
+                  src="/images/dr-romina-hero.jpeg"
                   alt="Dr. Romina Raykhshtat"
                   className="w-full photo-organic-3 shadow-lg sticky top-24"
                   loading="lazy"
