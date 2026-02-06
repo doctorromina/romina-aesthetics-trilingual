@@ -10,7 +10,7 @@ export function TelegramSection() {
   return (
     <section className="py-12 bg-gradient-to-r from-[#0088cc]/10 to-[#0088cc]/5">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-2xl mx-auto text-center">
+        <div className="scroll-reveal max-w-2xl mx-auto text-center">
           <div className="w-16 h-16 rounded-full bg-[#0088cc] flex items-center justify-center mx-auto mb-6">
             <Send className="w-8 h-8 text-white" />
           </div>

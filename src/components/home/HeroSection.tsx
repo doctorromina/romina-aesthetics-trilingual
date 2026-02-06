@@ -1,8 +1,10 @@
 import { useLocale } from '@/contexts/LocaleContext';
 import { Button } from '@/components/ui/button';
+import { useParallax } from '@/hooks/useParallax';
 
 export function HeroSection() {
   const { t, whatsAppUrl } = useLocale();
+  const parallaxRef = useParallax(0.12);
 
   return (
     <section className="relative min-h-[90vh] flex items-center gradient-hero overflow-hidden">
@@ -22,27 +24,34 @@ export function HeroSection() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          {/* Content */}
-          <div className="max-w-xl animate-fade-in-up">
+          {/* Content — staggered entrance */}
+          <div className="max-w-xl">
             {/* Accent dot + line */}
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-6 hero-text-reveal">
               <div className="w-2 h-2 rounded-full bg-secondary" />
               <div className="w-12 h-px bg-secondary" />
             </div>
 
             {/* Tagline */}
-            <p className="text-xs tracking-[0.3em] text-muted-foreground mb-4 font-body uppercase">
+            <p
+              className="text-xs tracking-[0.3em] text-muted-foreground mb-4 font-body uppercase hero-text-reveal"
+              style={{ animationDelay: '0.15s' }}
+            >
               {t.hero.tagline}
             </p>
 
             {/* Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary mb-6 leading-tight text-balance">
+            <h1
+              className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary mb-6 leading-tight text-balance hero-text-reveal"
+              style={{ animationDelay: '0.3s' }}
+            >
               {t.hero.headline}
             </h1>
 
             {/* Subheadline */}
             <p 
-              className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed"
+              className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed hero-text-reveal"
+              style={{ animationDelay: '0.5s' }}
               dangerouslySetInnerHTML={{ 
                 __html: t.hero.subheadline.replace(
                   /Dr\.\s*Romina(\s*Raykhshtat)?/gi,
@@ -51,15 +60,17 @@ export function HeroSection() {
               }}
             />
 
-            {/* CTA */}
-            <Button asChild className="btn-primary text-base px-10 py-4 h-auto">
-              <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">{t.hero.cta}</a>
-            </Button>
+            {/* CTA — appears last */}
+            <div className="hero-cta-reveal">
+              <Button asChild className="btn-primary text-base px-10 py-4 h-auto">
+                <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">{t.hero.cta}</a>
+              </Button>
+            </div>
           </div>
 
-          {/* Hero Photo */}
-          <div className="relative hidden lg:block animate-fade-in">
-            <div className="aspect-[4/5] relative">
+          {/* Hero Photo — Desktop with parallax */}
+          <div ref={parallaxRef} className="relative hidden lg:block">
+            <div className="aspect-[4/5] relative hero-photo-reveal">
               <img 
                 src="/images/dr-romina-hero.jpeg"
                 alt="Dr. Romina Raykhshtat"
@@ -85,15 +96,15 @@ export function HeroSection() {
               />
             </div>
 
-            {/* Brand accent decorations */}
-            <div className="absolute -bottom-6 -start-6 w-28 h-28 rounded-full bg-secondary/40" />
-            <div className="absolute -top-4 -end-4 w-16 h-16 rounded-full bg-secondary/25" />
-            <div className="absolute -bottom-3 start-20 w-20 h-px bg-secondary/50" />
+            {/* Brand accent decorations — staggered */}
+            <div className="absolute -bottom-6 -start-6 w-28 h-28 rounded-full bg-secondary/40 hero-text-reveal" style={{ animationDelay: '0.8s' }} />
+            <div className="absolute -top-4 -end-4 w-16 h-16 rounded-full bg-secondary/25 hero-text-reveal" style={{ animationDelay: '1s' }} />
+            <div className="absolute -bottom-3 start-20 w-20 h-px bg-secondary/50 hero-text-reveal" style={{ animationDelay: '0.9s' }} />
           </div>
 
           {/* Mobile Hero Photo */}
-          <div className="lg:hidden animate-fade-in">
-            <div className="relative max-w-sm mx-auto">
+          <div className="lg:hidden">
+            <div className="relative max-w-sm mx-auto hero-photo-reveal">
               <img 
                 src="/images/dr-romina-hero.jpeg"
                 alt="Dr. Romina Raykhshtat"
@@ -108,7 +119,6 @@ export function HeroSection() {
                   `
                 }}
               />
-              {/* Mobile accent */}
               <div className="absolute -bottom-3 start-4 w-12 h-12 rounded-full bg-secondary/30" />
             </div>
           </div>

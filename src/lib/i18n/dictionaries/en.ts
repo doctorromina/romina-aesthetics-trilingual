@@ -144,7 +144,7 @@ export const en = {
         id: 'ultraformer',
         name: 'ULTRAFORMER',
         shortDesc: 'SMAS lifting for double chin, hooded eyelids, and neck.',
-        fullDesc: 'ULTRAFORMER is a device for SMAS lifting — tightening the deep facial layer that surgical facelifts target. Excellent for double chin, hooded eyelids, nasolabial area, and neck. One session is usually enough — this is not a course treatment. Results develop gradually over 2-3 months as collagen rebuilds. Consultation required before booking.',
+        fullDesc: 'ULTRAFORMER is a SMAS lifting device — it uses focused ultrasound to tighten skin and stimulate collagen in the deep facial layers that a surgical facelift would address. Excellent for double chin, hooded eyelids, nasolabial folds, and neck. One session is usually enough — this is not a course treatment. Results are achieved gradually over 2-3 months as collagen rebuilds. Consultation required before booking.',
         faq: [
           {
             q: 'How is this different from surgery?',

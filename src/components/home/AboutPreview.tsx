@@ -12,7 +12,7 @@ export function AboutPreview() {
       {/* Subtle periwinkle accent */}
       <div className="absolute top-0 end-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
       
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="scroll-reveal container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image */}
           <div className="order-2 lg:order-1 relative">

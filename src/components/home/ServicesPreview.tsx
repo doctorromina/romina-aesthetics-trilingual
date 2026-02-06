@@ -49,7 +49,7 @@ export function ServicesPreview() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+        <div className="scroll-reveal text-center max-w-2xl mx-auto mb-12 md:mb-16">
           {/* Accent dot + line */}
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
@@ -66,7 +66,7 @@ export function ServicesPreview() {
         </div>
 
         {/* Service Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="scroll-reveal-stagger grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => {
             const Icon = serviceIcons[service.key];
             const serviceData = t.services.items[service.key];
