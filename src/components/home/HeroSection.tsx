@@ -108,7 +108,7 @@ export function HeroSection() {
               <img 
                 src="/images/romina-portrait.jpeg"
                 alt="Dr. Romina Raykhshtat"
-                className="w-[440px] h-[560px] object-cover object-top photo-organic-2 shadow-2xl shadow-secondary/20"
+                className="w-[396px] h-[504px] object-cover object-top photo-organic-2 shadow-2xl shadow-secondary/20"
                 loading="eager"
               />
             </div>
@@ -120,7 +120,7 @@ export function HeroSection() {
               <img 
                 src="/images/romina-portrait.jpeg"
                 alt="Dr. Romina Raykhshtat"
-                className="w-[260px] h-[260px] object-cover object-top photo-organic-mobile shadow-xl shadow-secondary/20"
+                className="w-[234px] h-[234px] object-cover object-top photo-organic-mobile shadow-xl shadow-secondary/20"
                 loading="eager"
               />
             </div>
