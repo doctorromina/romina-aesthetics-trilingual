@@ -216,7 +216,7 @@ export const en = {
   },
   contact: {
     title: 'Contact',
-    subtitle: 'We\'re happy to answer any questions',
+    subtitle: 'I\'m happy to answer any questions',
     bookViaWhatsApp: 'Book via WhatsApp',
     bookDescription: 'All appointments are booked through WhatsApp. Click the button below to start a conversation.',
     info: {
