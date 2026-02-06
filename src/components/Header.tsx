@@ -1,13 +1,10 @@
-import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { LogoCompact } from './Logo';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { Button } from '@/components/ui/button';
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
   const { t, getPath, locale, whatsAppUrl } = useLocale();
   const location = useLocation();
 
@@ -30,7 +27,7 @@ export function Header() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to={getPath('/')} className="z-50">
+          <Link to={getPath('/')} className="shrink-0">
             <LogoCompact />
           </Link>
 
@@ -65,52 +62,15 @@ export function Header() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden z-50 p-2"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="fixed inset-0 bg-background z-40 md:hidden">
-          <div className="flex flex-col items-center justify-center h-full gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={item.href}
-                onClick={() => setIsOpen(false)}
-                className={`
-                  text-2xl font-medium transition-colors
-                  ${isActive(item.href) 
-                    ? 'text-primary' 
-                    : 'text-muted-foreground hover:text-primary'}
-                `}
-              >
-                {item.label}
-              </Link>
-            ))}
-            
-            <div className="pt-6 flex flex-col items-center gap-4">
-              <div className="w-12 h-px bg-border/60" />
-              <LanguageSwitcher />
-            </div>
-            
-            <Button 
-              asChild 
-              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 font-medium tracking-wider text-sm uppercase shadow-md hover:shadow-lg transition-all duration-300 mt-4"
-              onClick={() => setIsOpen(false)}
-            >
+          {/* Mobile Actions — always visible in header */}
+          <div className="flex md:hidden items-center gap-2">
+            <LanguageSwitcher />
+            <Button asChild size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-4 py-1.5 font-medium tracking-wider text-[10px] uppercase shadow-md">
               <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">{t.hero.cta}</a>
             </Button>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }
