@@ -89,33 +89,25 @@ export function Footer() {
             <h4 className="font-heading text-lg font-semibold text-primary mb-4">
               {t.footer.contact}
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li className="group/reveal">
                 <a
                   href="tel:+972534706919"
-                  className="inline-flex items-center gap-2.5 text-muted-foreground hover:text-primary transition-colors"
-                  dir="ltr"
+                  className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <span className="w-8 h-8 rounded-full bg-secondary/50 group-hover/reveal:bg-secondary flex items-center justify-center flex-shrink-0 transition-colors">
-                    <Phone size={14} className="text-primary" />
-                  </span>
-                  <span className="text-sm max-w-0 overflow-hidden opacity-0 group-hover/reveal:max-w-[200px] group-hover/reveal:opacity-100 transition-all duration-300 whitespace-nowrap">
-                    +972-53-470-6919
-                  </span>
+                  <Phone size={15} className="text-muted-foreground/60 group-hover/reveal:text-primary transition-colors" />
+                  <span className="group-hover/reveal:hidden transition-all">{t.footer.callUs}</span>
+                  <span className="hidden group-hover/reveal:inline transition-all" dir="ltr">+972-53-470-6919</span>
                 </a>
               </li>
               <li className="group/reveal">
                 <a
                   href="mailto:info@drromina.com"
-                  className="inline-flex items-center gap-2.5 text-muted-foreground hover:text-primary transition-colors"
-                  dir="ltr"
+                  className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <span className="w-8 h-8 rounded-full bg-secondary/50 group-hover/reveal:bg-secondary flex items-center justify-center flex-shrink-0 transition-colors">
-                    <Mail size={14} className="text-primary" />
-                  </span>
-                  <span className="text-sm max-w-0 overflow-hidden opacity-0 group-hover/reveal:max-w-[200px] group-hover/reveal:opacity-100 transition-all duration-300 whitespace-nowrap">
-                    info@drromina.com
-                  </span>
+                  <Mail size={15} className="text-muted-foreground/60 group-hover/reveal:text-primary transition-colors" />
+                  <span className="group-hover/reveal:hidden transition-all">{t.footer.emailUs}</span>
+                  <span className="hidden group-hover/reveal:inline transition-all" dir="ltr">info@drromina.com</span>
                 </a>
               </li>
             </ul>

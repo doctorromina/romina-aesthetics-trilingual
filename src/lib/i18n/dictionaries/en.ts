@@ -228,6 +228,8 @@ export const en = {
     tagline: 'FACE&SMILE AESTHETICS',
     quickLinks: 'Quick Links',
     contact: 'Contact',
+    callUs: 'Call',
+    emailUs: 'Email',
     legal: 'Legal',
     privacy: 'Privacy Policy',
     terms: 'Terms of Use',
