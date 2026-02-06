@@ -15,12 +15,12 @@ export function AboutPreview() {
       <div className="scroll-reveal container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image */}
-          <div className="order-2 lg:order-1 relative">
-            <div className="aspect-square relative">
+          <div className="order-2 lg:order-1 relative flex justify-center">
+            <div className="relative">
               <img 
                 src="/images/dr-romina-about.jpeg"
                 alt="Dr. Romina Raykhshtat"
-                className="w-full h-full object-cover photo-organic-2 shadow-xl"
+                className="w-[371px] h-[471px] object-cover photo-organic-2 shadow-xl"
                 loading="lazy"
               />
             </div>
