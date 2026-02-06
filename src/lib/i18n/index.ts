@@ -35,7 +35,7 @@ export function getLocalizedPath(path: string, locale: Locale): string {
   return `/${locale}${cleanPath || ''}`;
 }
 
-export function getWhatsAppUrl(locale: Locale, phoneNumber: string = '9725XXXXXXXX'): string {
+export function getWhatsAppUrl(locale: Locale, phoneNumber: string = '972534706919'): string {
   const messages: Record<Locale, string> = {
     he: 'שלום, אשמח לקבוע ייעוץ',
     en: 'Hi, I\'d like to book a consultation',
