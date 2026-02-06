@@ -25,7 +25,7 @@ export function PhilosophySection() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Quote */}
         <div className="scroll-reveal max-w-3xl mx-auto text-center mb-16 md:mb-20">
-          <Quote className="w-12 h-12 text-secondary mx-auto mb-6 rotate-180" />
+          <Quote className="w-10 h-10 text-secondary/70 mx-auto mb-6 rotate-180" strokeWidth={1.5} />
           <blockquote className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary leading-tight">
             {t.philosophy.quote}
           </blockquote>
@@ -47,8 +47,8 @@ export function PhilosophySection() {
                 key={index}
                 className="text-center group"
               >
-                <div className="w-16 h-16 rounded-full bg-secondary/30 flex items-center justify-center mx-auto mb-6 group-hover:bg-secondary/50 transition-colors border border-secondary/20">
-                  <Icon className="w-8 h-8 text-primary" />
+                <div className="w-14 h-14 rounded-full bg-secondary/30 flex items-center justify-center mx-auto mb-5 group-hover:bg-secondary/50 transition-colors border border-secondary/20">
+                  <Icon className="w-6 h-6 text-primary" strokeWidth={1.6} />
                 </div>
                 
                 <h3 className="text-xl font-heading font-semibold text-primary mb-3">

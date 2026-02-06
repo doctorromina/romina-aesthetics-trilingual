@@ -51,7 +51,7 @@ export function Footer() {
                 className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram size={20} className="text-primary" />
+                <Instagram size={18} className="text-primary" strokeWidth={1.8} />
               </a>
               <a
                 href={WHATSAPP_URL}
@@ -60,7 +60,7 @@ export function Footer() {
                 className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
                 aria-label="WhatsApp"
               >
-                <MessageCircle size={20} className="text-primary" />
+                <MessageCircle size={18} className="text-primary" strokeWidth={1.8} />
               </a>
             </div>
           </div>
@@ -95,7 +95,7 @@ export function Footer() {
                   href="tel:+972534706919"
                   className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <Phone size={15} className="text-muted-foreground/60 group-hover/reveal:text-primary transition-colors" />
+                  <Phone size={14} className="text-muted-foreground/60 group-hover/reveal:text-primary transition-colors" strokeWidth={1.8} />
                   <span className="group-hover/reveal:hidden transition-all">{t.footer.callUs}</span>
                   <span className="hidden group-hover/reveal:inline transition-all" dir="ltr">+972-53-470-6919</span>
                 </a>
@@ -105,7 +105,7 @@ export function Footer() {
                   href="mailto:info@drromina.com"
                   className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <Mail size={15} className="text-muted-foreground/60 group-hover/reveal:text-primary transition-colors" />
+                  <Mail size={14} className="text-muted-foreground/60 group-hover/reveal:text-primary transition-colors" strokeWidth={1.8} />
                   <span className="group-hover/reveal:hidden transition-all">{t.footer.emailUs}</span>
                   <span className="hidden group-hover/reveal:inline transition-all" dir="ltr">info@drromina.com</span>
                 </a>

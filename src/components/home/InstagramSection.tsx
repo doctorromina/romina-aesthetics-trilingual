@@ -22,7 +22,7 @@ export function InstagramSection() {
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             dir="ltr"
           >
-            <Instagram size={20} />
+            <Instagram size={18} strokeWidth={1.8} />
             <span>{t.instagram.handle}</span>
           </a>
         </div>
@@ -38,7 +38,7 @@ export function InstagramSection() {
               className="aspect-square bg-secondary/20 rounded-xl overflow-hidden group hover:opacity-90 transition-opacity"
             >
               <div className="w-full h-full flex items-center justify-center">
-                <Instagram className="w-8 h-8 text-secondary group-hover:scale-110 transition-transform" />
+                <Instagram className="w-6 h-6 text-secondary group-hover:scale-110 transition-transform" strokeWidth={1.5} />
               </div>
             </a>
           ))}
@@ -53,7 +53,7 @@ export function InstagramSection() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors font-medium"
             dir="ltr"
           >
-            <Instagram size={20} />
+            <Instagram size={18} strokeWidth={1.8} />
             <span>{t.instagram.handle}</span>
           </a>
         </div>

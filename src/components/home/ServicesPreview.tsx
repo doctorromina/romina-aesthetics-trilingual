@@ -79,8 +79,8 @@ export function ServicesPreview() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Icon */}
-                <div className="w-14 h-14 rounded-2xl bg-secondary/50 flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors border border-secondary/30">
-                  <Icon className="w-7 h-7 text-primary" />
+                <div className="w-12 h-12 rounded-xl bg-secondary/50 flex items-center justify-center mb-5 group-hover:bg-secondary transition-colors border border-secondary/30">
+                  <Icon className="w-5 h-5 text-primary" strokeWidth={1.8} />
                 </div>
 
                 {/* Content */}
@@ -95,7 +95,7 @@ export function ServicesPreview() {
                 {/* Arrow */}
                 <div className="mt-auto pt-4 flex items-center text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="me-2">{t.about.readMore}</span>
-                  <Arrow size={16} className="transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
+                  <Arrow size={14} className="transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
                 </div>
               </Link>
             );
