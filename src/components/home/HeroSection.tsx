@@ -63,7 +63,7 @@ export function HeroSection() {
 
           {/* Hero Photo — Desktop with parallax */}
           <div ref={parallaxRef} className="relative hidden lg:block">
-            <div className="relative hero-photo-reveal max-w-[280px] mx-auto">
+            <div className="relative hero-photo-reveal max-w-sm mx-auto">
               <img 
                 src="/images/romina-portrait.jpeg"
                 alt="Dr. Romina Raykhshtat"
