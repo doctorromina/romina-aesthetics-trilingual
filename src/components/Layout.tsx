@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Header } from './Header';
 import { Footer } from './Footer';
-import { WhatsAppButton } from './WhatsAppButton';
+
 import { SchemaMarkup } from './SchemaMarkup';
 import { SeoHead } from './SeoHead';
 
@@ -66,7 +66,6 @@ export function Layout() {
         <Outlet />
       </main>
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 }

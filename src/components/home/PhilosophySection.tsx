@@ -1,9 +1,8 @@
 import { useLocale } from '@/contexts/LocaleContext';
-import { Button } from '@/components/ui/button';
 import { Quote, Fingerprint, RefreshCw, Eye } from 'lucide-react';
 
 export function PhilosophySection() {
-  const { t, whatsAppUrl } = useLocale();
+  const { t } = useLocale();
 
   const pillarIcons = [Fingerprint, RefreshCw, Eye];
 
@@ -64,23 +63,6 @@ export function PhilosophySection() {
           })}
         </div>
 
-        {/* CTA with background image */}
-        <div className="scroll-reveal mt-16 md:mt-20 relative photo-organic-3 overflow-hidden">
-          <img 
-            src="/images/dr-romina-cta.jpeg"
-            alt="Dr. Romina Raykhshtat"
-            className="w-full h-72 md:h-96 object-cover object-top"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent" />
-          <div className="absolute bottom-0 inset-x-0 p-8 text-center">
-            <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 shadow-lg">
-              <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">
-                {t.hero.cta}
-              </a>
-            </Button>
-          </div>
-        </div>
       </div>
     </section>
   );

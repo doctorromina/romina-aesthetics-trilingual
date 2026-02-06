@@ -20,7 +20,7 @@ const wazeAddresses = [
 ];
 
 export function ContactPage() {
-  const { t, whatsAppUrl } = useLocale();
+  const { t, whatsAppUrl, locale } = useLocale();
 
   return (
     <>
@@ -68,32 +68,34 @@ export function ContactPage() {
               </Button>
             </div>
 
-            {/* Telegram Card */}
-            <div className="bg-[#0088cc]/10 rounded-2xl p-8 border border-[#0088cc]/20 mb-8">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-full bg-[#0088cc] flex items-center justify-center">
-                  <Send className="w-8 h-8 text-white" />
+            {/* Telegram Card — RU only */}
+            {locale === 'ru' && (
+              <div className="bg-[#0088cc]/10 rounded-2xl p-8 border border-[#0088cc]/20 mb-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 rounded-full bg-[#0088cc] flex items-center justify-center">
+                    <Send className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-heading font-semibold text-primary">
+                      {t.telegram.title}
+                    </h2>
+                    <p className="text-muted-foreground">
+                      {t.telegram.description}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h2 className="text-2xl font-heading font-semibold text-primary">
-                    {t.telegram.title}
-                  </h2>
-                  <p className="text-muted-foreground">
-                    {t.telegram.description}
-                  </p>
-                </div>
+                <Button
+                  asChild
+                  size="lg"
+                  className="w-full bg-[#0088cc] hover:bg-[#0077b5] text-white text-lg py-6"
+                >
+                  <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
+                    <Send size={22} className="me-3" />
+                    {t.telegram.cta}
+                  </a>
+                </Button>
               </div>
-              <Button
-                asChild
-                size="lg"
-                className="w-full bg-[#0088cc] hover:bg-[#0077b5] text-white text-lg py-6"
-              >
-                <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
-                  <Send size={22} className="me-3" />
-                  {t.telegram.cta}
-                </a>
-              </Button>
-            </div>
+            )}
 
             {/* Contact Info Cards */}
             <div className="grid gap-4 mb-8">

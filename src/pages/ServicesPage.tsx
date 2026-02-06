@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Sparkles, PenTool, Heart, Atom, Droplets, Zap } from 'lucide-react';
 import { useLocale } from '@/contexts/LocaleContext';
-import { Button } from '@/components/ui/button';
 import {
   Accordion,
   AccordionContent,
@@ -22,7 +21,7 @@ const serviceIcons = {
 const serviceKeys = ['botulinum', 'sculpting', 'lips', 'collagen', 'skinQuality', 'ultraformer'] as const;
 
 export function ServicesPage() {
-  const { t, whatsAppUrl } = useLocale();
+  const { t } = useLocale();
   const location = useLocation();
 
   // Scroll to anchor on hash change
@@ -128,15 +127,9 @@ export function ServicesPage() {
                         </div>
                       </div>
 
-                      <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                      <p className="text-lg text-muted-foreground leading-relaxed">
                         {service.fullDesc}
                       </p>
-
-                      <Button asChild className="btn-primary">
-                        <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">
-                          {t.services.bookConsultation}
-                        </a>
-                      </Button>
                     </div>
 
                     {/* FAQ */}
