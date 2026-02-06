@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Header } from './Header';
 import { Footer } from './Footer';
+import { MobileTabBar } from './MobileTabBar';
 
 import { SchemaMarkup } from './SchemaMarkup';
 import { SeoHead } from './SeoHead';
@@ -69,10 +70,11 @@ export function Layout() {
       <SeoHead />
       <SchemaMarkup />
       <Header />
-      <main className="flex-1 relative z-10">
+      <main className="flex-1 relative z-10 pb-16 md:pb-0">
         <Outlet />
       </main>
       <Footer />
+      <MobileTabBar />
     </div>
   );
 }
