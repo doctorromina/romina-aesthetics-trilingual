@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Instagram, MessageCircle } from 'lucide-react';
+import { Instagram, MessageCircle, Phone, Mail } from 'lucide-react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { LogoWithTagline } from './Logo';
-import { LtrWrapper } from './LocalizedText';
 
 const WHATSAPP_URL = 'https://wa.me/972534706919';
 
@@ -90,12 +89,30 @@ export function Footer() {
             <h4 className="font-heading text-lg font-semibold text-primary mb-4">
               {t.footer.contact}
             </h4>
-            <ul className="space-y-2 text-muted-foreground">
+            <ul className="space-y-3">
               <li>
-                <LtrWrapper>info@drromina.com</LtrWrapper>
+                <a
+                  href="tel:+972534706919"
+                  className="inline-flex items-center gap-2.5 text-muted-foreground hover:text-primary transition-colors group"
+                  dir="ltr"
+                >
+                  <span className="w-8 h-8 rounded-full bg-secondary/50 group-hover:bg-secondary flex items-center justify-center flex-shrink-0 transition-colors">
+                    <Phone size={14} className="text-primary" />
+                  </span>
+                  <span className="text-sm">+972-53-470-6919</span>
+                </a>
               </li>
               <li>
-                <LtrWrapper>+972-5X-XXX-XXXX</LtrWrapper>
+                <a
+                  href="mailto:info@drromina.com"
+                  className="inline-flex items-center gap-2.5 text-muted-foreground hover:text-primary transition-colors group"
+                  dir="ltr"
+                >
+                  <span className="w-8 h-8 rounded-full bg-secondary/50 group-hover:bg-secondary flex items-center justify-center flex-shrink-0 transition-colors">
+                    <Mail size={14} className="text-primary" />
+                  </span>
+                  <span className="text-sm">info@drromina.com</span>
+                </a>
               </li>
             </ul>
           </div>
