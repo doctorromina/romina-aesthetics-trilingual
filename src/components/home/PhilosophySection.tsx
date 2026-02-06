@@ -25,7 +25,7 @@ export function PhilosophySection() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Quote */}
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+        <div className="scroll-reveal max-w-3xl mx-auto text-center mb-16 md:mb-20">
           <Quote className="w-12 h-12 text-secondary mx-auto mb-6 rotate-180" />
           <blockquote className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary leading-tight">
             {t.philosophy.quote}
@@ -39,7 +39,7 @@ export function PhilosophySection() {
         </div>
 
         {/* Pillars */}
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+        <div className="scroll-reveal-stagger grid md:grid-cols-3 gap-8 md:gap-12">
           {t.philosophy.pillars.map((pillar, index) => {
             const Icon = pillarIcons[index];
             
@@ -65,7 +65,7 @@ export function PhilosophySection() {
         </div>
 
         {/* CTA with background image */}
-        <div className="mt-16 md:mt-20 relative photo-organic-3 overflow-hidden">
+        <div className="scroll-reveal mt-16 md:mt-20 relative photo-organic-3 overflow-hidden">
           <img 
             src="/images/dr-romina-cta.jpeg"
             alt="Dr. Romina Raykhshtat"

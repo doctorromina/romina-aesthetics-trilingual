@@ -110,7 +110,7 @@ export function ServicesPage() {
                 <section 
                   key={key} 
                   id={service.id}
-                  className="scroll-mt-32 relative"
+                  className="scroll-reveal scroll-mt-32 relative"
                 >
                   <div className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-start ${isEven ? '' : 'lg:flex-row-reverse'}`}>
                     {/* Content */}

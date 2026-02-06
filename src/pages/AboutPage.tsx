@@ -65,13 +65,23 @@ export function AboutPage() {
       {/* Bio Section */}
       <section className="section-padding bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto">
-            <div className="space-y-6">
-              {t.about.bio.map((paragraph, index) => (
-                <p key={index} className="text-lg text-muted-foreground leading-relaxed">
-                  {paragraph}
-                </p>
-              ))}
+          <div className="max-w-4xl mx-auto">
+            <div className="scroll-reveal grid lg:grid-cols-5 gap-12 items-start">
+              <div className="lg:col-span-3 space-y-6">
+                {t.about.bio.map((paragraph, index) => (
+                  <p key={index} className="text-lg text-muted-foreground leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+              <div className="lg:col-span-2 hidden lg:block">
+                <img 
+                  src="/images/romina-portrait.jpeg"
+                  alt="Dr. Romina Raykhshtat"
+                  className="w-full photo-organic-3 shadow-lg sticky top-24"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -81,12 +91,14 @@ export function AboutPage() {
       <section className="section-padding bg-muted/30">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-6">
-              {t.about.philosophy.title}
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
-              {t.about.philosophy.description}
-            </p>
+            <div className="scroll-reveal">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-6">
+                {t.about.philosophy.title}
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
+                {t.about.philosophy.description}
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -94,7 +106,7 @@ export function AboutPage() {
       {/* Credentials Section */}
       <section className="section-padding bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto">
+          <div className="scroll-reveal max-w-3xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary mb-8 text-center">
               {t.about.credentials.title}
             </h2>

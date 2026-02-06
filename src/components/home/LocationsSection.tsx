@@ -26,7 +26,7 @@ export function LocationsSection() {
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="scroll-reveal text-center max-w-2xl mx-auto mb-12">
           {/* Accent dot + line */}
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
@@ -40,7 +40,7 @@ export function LocationsSection() {
         </div>
 
         {/* Location Cards */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="scroll-reveal-stagger grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {t.locations.items.map((location, index) => (
             <div 
               key={index}
