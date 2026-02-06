@@ -72,7 +72,7 @@ export function HeroSection() {
           <div ref={parallaxRef} className="relative hidden lg:block">
             <div className="aspect-[4/5] relative hero-photo-reveal">
               <img 
-                src="/images/dr-romina-hero.jpeg"
+                src="/images/romina-portrait.jpeg"
                 alt="Dr. Romina Raykhshtat"
                 className="w-full h-full object-cover object-top photo-organic-1"
                 loading="eager"
@@ -106,7 +106,7 @@ export function HeroSection() {
           <div className="lg:hidden">
             <div className="relative max-w-sm mx-auto hero-photo-reveal">
               <img 
-                src="/images/dr-romina-hero.jpeg"
+                src="/images/romina-portrait.jpeg"
                 alt="Dr. Romina Raykhshtat"
                 className="w-full aspect-[3/4] object-cover object-top photo-organic-mobile"
                 loading="eager"
