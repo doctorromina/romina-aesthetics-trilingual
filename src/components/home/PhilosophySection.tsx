@@ -65,7 +65,7 @@ export function PhilosophySection() {
         </div>
 
         {/* CTA with background image */}
-        <div className="mt-16 md:mt-20 relative rounded-2xl overflow-hidden">
+        <div className="mt-16 md:mt-20 relative photo-organic-3 overflow-hidden">
           <img 
             src="/images/dr-romina-cta.jpeg"
             alt="Dr. Romina Raykhshtat"

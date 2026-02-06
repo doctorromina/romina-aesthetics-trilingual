@@ -16,16 +16,16 @@ export function AboutPreview() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image */}
           <div className="order-2 lg:order-1 relative">
-            <div className="aspect-square rounded-3xl overflow-hidden relative shadow-xl">
+            <div className="aspect-square relative">
               <img 
                 src="/images/dr-romina-about.jpeg"
                 alt="Dr. Romina Raykhshtat"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover photo-organic-2 shadow-xl"
                 loading="lazy"
               />
             </div>
             {/* Decorative elements */}
-            <div className="absolute -bottom-4 -end-4 w-24 h-24 border-2 border-secondary/40 rounded-3xl" />
+            <div className="absolute -bottom-4 -end-4 w-24 h-24 border-2 border-secondary/40 photo-organic-3" />
             <div className="absolute -top-3 -start-3 w-10 h-10 rounded-full bg-secondary/30" />
           </div>
 

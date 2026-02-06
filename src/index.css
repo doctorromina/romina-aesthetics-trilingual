@@ -174,6 +174,23 @@
     text-wrap: balance;
   }
   
+  /* Organic Photo Shapes */
+  .photo-organic-1 {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  
+  .photo-organic-2 {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  
+  .photo-organic-3 {
+    border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%;
+  }
+
+  .photo-organic-mobile {
+    border-radius: 35% 65% 55% 45% / 45% 35% 65% 55%;
+  }
+
   /* Decorative Elements */
   .accent-line {
     @apply h-px bg-gradient-to-r from-transparent via-secondary to-transparent;
