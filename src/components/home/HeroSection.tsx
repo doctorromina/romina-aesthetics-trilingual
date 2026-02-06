@@ -6,7 +6,7 @@ export function HeroSection() {
   const parallaxRef = useParallax(0.25);
 
   return (
-    <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-brand-cream">
+    <section className="relative min-h-[80vh] flex items-center gradient-hero overflow-hidden">
       {/* Warm abstract background shapes */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Large organic periwinkle wash — top-end */}
