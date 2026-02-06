@@ -8,7 +8,7 @@ import { TelegramSection } from '@/components/home/TelegramSection';
 import { LocationsSection } from '@/components/home/LocationsSection';
 
 export function HomePage() {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
 
   return (
     <>
@@ -19,7 +19,7 @@ export function HomePage() {
       <AboutPreview />
       <ServicesPreview />
       <PhilosophySection />
-      <TelegramSection />
+      {locale === 'ru' && <TelegramSection />}
       <InstagramSection />
       <LocationsSection />
     </>

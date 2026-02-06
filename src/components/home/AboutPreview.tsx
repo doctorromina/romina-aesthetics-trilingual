@@ -42,7 +42,7 @@ export function AboutPreview() {
             </h2>
             
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              {t.about.bio[0]}
+              {t.about.previewBio}
             </p>
 
             <Link 

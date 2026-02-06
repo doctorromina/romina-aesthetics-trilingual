@@ -59,7 +59,7 @@ export function Header() {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
             <LanguageSwitcher />
-            <Button asChild className="btn-primary text-sm">
+            <Button asChild variant="outline" size="sm" className="border-primary/30 text-primary hover:bg-primary/5 font-medium tracking-wide">
               <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">{t.hero.cta}</a>
             </Button>
           </div>
@@ -101,7 +101,8 @@ export function Header() {
             
             <Button 
               asChild 
-              className="btn-primary mt-4"
+              variant="outline"
+              className="border-primary/30 text-primary hover:bg-primary/5 font-medium tracking-wide mt-4"
               onClick={() => setIsOpen(false)}
             >
               <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">{t.hero.cta}</a>

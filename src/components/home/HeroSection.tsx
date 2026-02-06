@@ -1,9 +1,8 @@
 import { useLocale } from '@/contexts/LocaleContext';
-import { Button } from '@/components/ui/button';
 import { useParallax } from '@/hooks/useParallax';
 
 export function HeroSection() {
-  const { t, whatsAppUrl } = useLocale();
+  const { t } = useLocale();
   const parallaxRef = useParallax(0.12);
 
   return (
@@ -60,12 +59,6 @@ export function HeroSection() {
               }}
             />
 
-            {/* CTA — appears last */}
-            <div className="hero-cta-reveal">
-              <Button asChild className="btn-primary text-base px-10 py-4 h-auto">
-                <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">{t.hero.cta}</a>
-              </Button>
-            </div>
           </div>
 
           {/* Hero Photo — Desktop with parallax */}

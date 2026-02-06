@@ -1,8 +1,7 @@
 import { useLocale } from '@/contexts/LocaleContext';
-import { Button } from '@/components/ui/button';
 
 export function AboutPage() {
-  const { t, whatsAppUrl } = useLocale();
+  const { t } = useLocale();
 
   const credentials = [
     { label: t.about.credentials.education, value: t.about.credentials.educationValue },
@@ -52,11 +51,6 @@ export function AboutPage() {
                 />
               </p>
 
-              <Button asChild className="btn-primary">
-                <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">
-                  {t.about.cta}
-                </a>
-              </Button>
             </div>
           </div>
         </div>
@@ -126,23 +120,6 @@ export function AboutPage() {
               </dl>
             </div>
 
-            {/* CTA with image */}
-            <div className="mt-12 relative photo-organic-3 overflow-hidden">
-              <img 
-                src="/images/dr-romina-cta.jpeg"
-                alt="Dr. Romina Raykhshtat"
-                className="w-full h-64 md:h-80 object-cover object-top"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent" />
-              <div className="absolute bottom-0 inset-x-0 p-8 text-center">
-                <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
-                  <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">
-                    {t.about.cta}
-                  </a>
-                </Button>
-              </div>
-            </div>
           </div>
         </div>
       </section>
