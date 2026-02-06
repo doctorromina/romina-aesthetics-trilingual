@@ -10,6 +10,13 @@ export function Layout() {
   const location = useLocation();
   const observerRef = useRef<IntersectionObserver | null>(null);
 
+  // Scroll to top on route change (not hash changes)
+  useEffect(() => {
+    if (!location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+  }, [location.pathname]);
+
   // Global scroll-reveal observer — applies to any element with .scroll-reveal or .scroll-reveal-stagger
   useEffect(() => {
     observerRef.current?.disconnect();

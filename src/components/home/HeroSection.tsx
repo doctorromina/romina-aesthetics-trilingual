@@ -3,10 +3,10 @@ import { useParallax } from '@/hooks/useParallax';
 
 export function HeroSection() {
   const { t } = useLocale();
-  const parallaxRef = useParallax(0.12);
+  const parallaxRef = useParallax(0.25);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center gradient-hero overflow-hidden">
+    <section className="relative min-h-[80vh] flex items-center gradient-hero overflow-hidden">
       {/* Brand symbol watermark */}
       <div className="absolute inset-inline-end-0 bottom-0 pointer-events-none select-none opacity-[0.03]">
         <img 
@@ -61,38 +61,29 @@ export function HeroSection() {
 
           </div>
 
-          {/* Hero Photo — Desktop with parallax */}
+          {/* Hero Photo — Desktop with parallax, premium blend */}
           <div ref={parallaxRef} className="relative hidden lg:block">
-            <div className="aspect-[4/5] relative hero-photo-reveal">
+            <div className="aspect-[4/4] relative hero-photo-reveal max-h-[520px]">
               <img 
                 src="/images/romina-portrait.jpeg"
                 alt="Dr. Romina Raykhshtat"
-                className="w-full h-full object-cover object-top photo-organic-1"
+                className="w-full h-full object-cover object-top rounded-[2rem]"
                 loading="eager"
               />
-              {/* Gradient edges that blend into background */}
-              <div className="absolute inset-0 photo-organic-1 pointer-events-none"
+              {/* Soft edge gradient blending into background */}
+              <div className="absolute inset-0 rounded-[2rem] pointer-events-none"
                 style={{
                   background: `
-                    linear-gradient(to right, hsl(var(--background)) 0%, transparent 20%, transparent 100%),
-                    linear-gradient(to left, hsl(var(--background)) 0%, transparent 15%, transparent 100%),
-                    linear-gradient(to bottom, hsl(var(--background)) 0%, transparent 12%, transparent 88%, hsl(var(--background)) 100%)
+                    linear-gradient(to right, hsl(var(--background)) 0%, transparent 12%, transparent 88%, hsl(var(--background)) 100%),
+                    linear-gradient(to bottom, hsl(var(--background)) 0%, transparent 8%, transparent 90%, hsl(var(--background)) 100%)
                   `
                 }}
-              />
-              {/* Stronger gradient on text side */}
-              <div className="absolute inset-0 photo-organic-1 pointer-events-none rtl:hidden"
-                style={{ background: 'linear-gradient(to right, hsl(var(--background) / 0.5) 0%, transparent 25%)' }}
-              />
-              <div className="absolute inset-0 photo-organic-1 pointer-events-none hidden rtl:block"
-                style={{ background: 'linear-gradient(to left, hsl(var(--background) / 0.5) 0%, transparent 25%)' }}
               />
             </div>
 
             {/* Brand accent decorations — staggered */}
-            <div className="absolute -bottom-6 -start-6 w-28 h-28 rounded-full bg-secondary/40 hero-text-reveal" style={{ animationDelay: '0.8s' }} />
-            <div className="absolute -top-4 -end-4 w-16 h-16 rounded-full bg-secondary/25 hero-text-reveal" style={{ animationDelay: '1s' }} />
-            <div className="absolute -bottom-3 start-20 w-20 h-px bg-secondary/50 hero-text-reveal" style={{ animationDelay: '0.9s' }} />
+            <div className="absolute -bottom-4 -start-4 w-20 h-20 rounded-full bg-secondary/30 hero-text-reveal" style={{ animationDelay: '0.8s' }} />
+            <div className="absolute -top-3 -end-3 w-12 h-12 rounded-full bg-secondary/20 hero-text-reveal" style={{ animationDelay: '1s' }} />
           </div>
 
           {/* Mobile Hero Photo */}
@@ -101,14 +92,14 @@ export function HeroSection() {
               <img 
                 src="/images/romina-portrait.jpeg"
                 alt="Dr. Romina Raykhshtat"
-                className="w-full aspect-[3/4] object-cover object-top photo-organic-mobile"
+                className="w-full aspect-[3/4] object-cover object-top rounded-2xl"
                 loading="eager"
               />
-              <div className="absolute inset-0 photo-organic-mobile pointer-events-none"
+              <div className="absolute inset-0 rounded-2xl pointer-events-none"
                 style={{
                   background: `
-                    linear-gradient(to bottom, hsl(var(--background)) 0%, transparent 10%, transparent 85%, hsl(var(--background)) 100%),
-                    linear-gradient(to right, hsl(var(--background) / 0.3) 0%, transparent 15%, transparent 85%, hsl(var(--background) / 0.3) 100%)
+                    linear-gradient(to bottom, hsl(var(--background)) 0%, transparent 8%, transparent 88%, hsl(var(--background)) 100%),
+                    linear-gradient(to right, hsl(var(--background) / 0.2) 0%, transparent 10%, transparent 90%, hsl(var(--background) / 0.2) 100%)
                   `
                 }}
               />

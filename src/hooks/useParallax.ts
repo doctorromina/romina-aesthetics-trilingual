@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export function useParallax(speed = 0.15) {
+export function useParallax(speed = 0.25) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
