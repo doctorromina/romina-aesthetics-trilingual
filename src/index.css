@@ -408,22 +408,22 @@
 
 .hero-fade-mask {
   -webkit-mask-image:
-    linear-gradient(to right, transparent, black 20%, black 80%, transparent),
-    linear-gradient(to bottom, transparent, black 12%, black 85%, transparent);
+    linear-gradient(to right, transparent, black 30%, black 70%, transparent),
+    linear-gradient(to bottom, transparent, black 18%, black 75%, transparent);
   mask-image:
-    linear-gradient(to right, transparent, black 20%, black 80%, transparent),
-    linear-gradient(to bottom, transparent, black 12%, black 85%, transparent);
+    linear-gradient(to right, transparent, black 30%, black 70%, transparent),
+    linear-gradient(to bottom, transparent, black 18%, black 75%, transparent);
   -webkit-mask-composite: source-in;
   mask-composite: intersect;
 }
 
 .hero-fade-mask-mobile {
   -webkit-mask-image:
-    linear-gradient(to right, transparent, black 10%, black 90%, transparent),
-    linear-gradient(to bottom, transparent, black 8%, black 82%, transparent);
+    linear-gradient(to right, transparent, black 15%, black 85%, transparent),
+    linear-gradient(to bottom, transparent, black 10%, black 75%, transparent);
   mask-image:
-    linear-gradient(to right, transparent, black 10%, black 90%, transparent),
-    linear-gradient(to bottom, transparent, black 8%, black 82%, transparent);
+    linear-gradient(to right, transparent, black 15%, black 85%, transparent),
+    linear-gradient(to bottom, transparent, black 10%, black 75%, transparent);
   -webkit-mask-composite: source-in;
   mask-composite: intersect;
 }
