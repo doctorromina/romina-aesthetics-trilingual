@@ -61,9 +61,9 @@ export function HeroSection() {
 
           </div>
 
-          {/* Hero Photo — Desktop with parallax, seamless fade */}
+          {/* Hero Photo — Desktop with parallax */}
           <div ref={parallaxRef} className="relative hidden lg:block">
-            <div className="relative hero-photo-reveal max-h-[540px] hero-fade-mask">
+            <div className="relative hero-photo-reveal">
               <img 
                 src="/images/romina-portrait.jpeg"
                 alt="Dr. Romina Raykhshtat"
@@ -75,7 +75,7 @@ export function HeroSection() {
 
           {/* Mobile Hero Photo */}
           <div className="lg:hidden">
-            <div className="relative max-w-sm mx-auto hero-photo-reveal hero-fade-mask-mobile">
+            <div className="relative max-w-sm mx-auto hero-photo-reveal">
               <img 
                 src="/images/romina-portrait.jpeg"
                 alt="Dr. Romina Raykhshtat"
