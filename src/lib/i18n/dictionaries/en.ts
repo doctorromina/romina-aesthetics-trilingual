@@ -11,7 +11,7 @@ export const en = {
   },
   hero: {
     tagline: 'FACE&SMILE AESTHETICS',
-    headline: 'Your face. Not a trend.',
+    headline: 'Faces tell. I listen.',
     subheadline: 'Natural injectable aesthetics by Dr. Romina Raykhshtat',
     cta: 'Book a Consultation',
   },

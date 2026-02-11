@@ -11,7 +11,7 @@ export const ru = {
   },
   hero: {
     tagline: 'FACE&SMILE AESTHETICS',
-    headline: 'Твоё лицо. Не тренд.',
+    headline: 'Лица говорят. Я слушаю.',
     subheadline: 'Естественная инъекционная эстетика — Dr. Romina Raykhshtat',
     cta: 'Записаться на консультацию',
   },

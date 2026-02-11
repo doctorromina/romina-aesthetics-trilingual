@@ -11,7 +11,7 @@ export const he = {
   },
   hero: {
     tagline: 'FACE&SMILE AESTHETICS',
-    headline: 'הפנים שלך. לא טרנד.',
+    headline: 'פנים מספרות. אני מקשיבה.',
     subheadline: 'אסתטיקה טבעית בהזרקות עם ד״ר רומינה רייכשטט',
     cta: 'לקביעת ייעוץ',
   },
