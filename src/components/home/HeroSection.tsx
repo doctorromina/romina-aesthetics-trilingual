@@ -104,11 +104,11 @@ export function HeroSection() {
               <div className="w-[438px] h-[521px] photo-organic-3 border border-secondary/15" />
             </div>
 
-            <div className="relative hero-photo-reveal">
+            <div className="relative hero-photo-reveal photo-container photo-hover">
               <img 
                 src="/images/romina-portrait.jpeg"
                 alt="Dr. Romina Raykhshtat"
-                className="w-[371px] h-[471px] object-cover object-top photo-organic-2 shadow-2xl shadow-secondary/20"
+                className="w-[371px] h-[471px] object-cover object-top photo-organic-2 photo-unified"
                 loading="eager"
               />
             </div>
@@ -116,11 +116,11 @@ export function HeroSection() {
 
           {/* Mobile Hero Photo — circular organic */}
           <div className="lg:hidden flex justify-center">
-            <div className="relative hero-photo-reveal">
+            <div className="relative hero-photo-reveal photo-container photo-hover">
               <img 
                 src="/images/romina-portrait.jpeg"
                 alt="Dr. Romina Raykhshtat"
-                className="w-[219px] h-[219px] object-cover object-top photo-organic-mobile shadow-xl shadow-secondary/20"
+                className="w-[219px] h-[219px] object-cover object-top photo-organic-mobile photo-unified"
                 loading="eager"
               />
             </div>
