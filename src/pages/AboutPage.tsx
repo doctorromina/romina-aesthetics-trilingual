@@ -41,14 +41,11 @@ export function AboutPage() {
               </h1>
               
               <p className="text-xl text-muted-foreground mb-8">
-                <span 
-                  dangerouslySetInnerHTML={{ 
-                    __html: t.about.heroSubheading.replace(
-                      /Dr\.\s*Romina(\s*Raykhshtat)?/gi,
-                      (match) => `<span translate="no" style="white-space: nowrap;">${match.replace(/\s+/g, '\u00A0')}</span>`
-                    )
-                  }}
-                />
+                {t.about.heroSubheading.split(/(Dr\.\s*Romina(?:\s*Raykhshtat)?)/gi).map((part, i) =>
+                  /Dr\.\s*Romina/i.test(part) ? (
+                    <span key={i} translate="no" className="whitespace-nowrap">{part.replace(/\s+/g, '\u00A0')}</span>
+                  ) : part
+                )}
               </p>
 
             </div>
