@@ -1,11 +1,60 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocale } from '@/contexts/LocaleContext';
 
 export function AboutPreview() {
   const { t, getPath, dir } = useLocale();
-  
   const Arrow = dir === 'rtl' ? ArrowLeft : ArrowRight;
+  const photoWrapRef = useRef<HTMLDivElement>(null);
+  const [revealed, setRevealed] = useState(false);
+
+  // Curtain reveal on scroll
+  useEffect(() => {
+    const el = photoWrapRef.current;
+    if (!el) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setRevealed(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setRevealed(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Parallax — desktop only
+  useEffect(() => {
+    const el = photoWrapRef.current;
+    if (!el) return;
+    if (window.innerWidth < 1024 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const rect = el.getBoundingClientRect();
+          const center = window.innerHeight / 2;
+          const offset = (rect.top + rect.height / 2 - center) * 0.1;
+          el.style.transform = `translateY(${offset}px)`;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <section className="section-padding bg-background relative overflow-hidden">
@@ -14,18 +63,23 @@ export function AboutPreview() {
       
       <div className="scroll-reveal container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Image */}
+          {/* Image with curtain reveal + grain */}
           <div className="order-2 lg:order-1 relative flex justify-center">
-            <div className="relative">
+            <div ref={photoWrapRef} className="relative about-photo-wrap">
               <img 
                 src="/images/dr-romina-about.jpeg"
                 alt="Dr. Romina Raykhshtat"
                 className="w-[371px] h-[471px] object-cover photo-organic-2 shadow-xl"
                 loading="lazy"
               />
+              {/* Film grain overlay */}
+              <div className="absolute inset-0 photo-organic-2 pointer-events-none about-grain" />
+              {/* Curtain overlay */}
+              <div
+                className={`absolute inset-0 photo-organic-2 pointer-events-none about-curtain ${revealed ? 'about-curtain-open' : ''}`}
+              />
             </div>
-            {/* Decorative elements */}
-            <div className="absolute -bottom-4 -end-4 w-24 h-24 border-2 border-secondary/40 photo-organic-3" />
+            {/* Small dot accent only */}
             <div className="absolute -top-3 -start-3 w-10 h-10 rounded-full bg-secondary/30" />
           </div>
 
