@@ -11,7 +11,7 @@ export const en = {
   },
   hero: {
     tagline: 'FACE&SMILE AESTHETICS',
-    headline: 'Faces tell. I listen.',
+    headline: 'Your face. Not a trend.',
     subheadline: 'Natural injectable aesthetics by Dr. Romina Raykhshtat',
     cta: 'Book a Consultation',
   },
@@ -191,46 +191,24 @@ export const en = {
   },
   locations: {
     title: 'Clinic Locations',
-    parking: 'Parking',
     items: [
       {
         name: 'Bat Yam',
         address: 'Rav Nissenbaum 37, Bat Yam',
         details: 'Uptown Business, Floor 13, Room 125',
         mapsUrl: 'https://www.google.com/maps/search/רב+ניסנבאום+37+בת+ים',
-        parking: [
-          {
-            name: 'Yochananof',
-            wazeUrl: 'https://waze.com/ul?ll=32.0135807,34.7516713&navigate=yes',
-            mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Yochananof+Bat+Yam&query_place_id=ChIJDYA4PQ2zAhUR5Zhc6BwkAhE',
-          },
-        ],
       },
       {
         name: 'Tel Aviv',
         address: 'Menachem Begin Rd 150, Tel Aviv',
         details: 'We Tower, Floor 6, Eco House Clinic',
         mapsUrl: 'https://www.google.com/maps/search/דרך+מנחם+בגין+150+תל+אביב',
-        parking: [
-          {
-            name: 'Midtown',
-            wazeUrl: 'https://waze.com/ul?ll=32.0772344,34.792922&navigate=yes',
-            mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Midtown+Parking+Tel+Aviv&query_place_id=ChIJE0PVsGlLHRURVztXc1E8nfA',
-          },
-        ],
       },
       {
         name: 'Rishon LeZion',
         address: 'Rothschild 78, Rishon LeZion',
         details: 'Floor 1, Dr. Dashevsky Dental Clinic',
         mapsUrl: 'https://www.google.com/maps/search/רוטשילד+78+ראשון+לציון',
-        parking: [
-          {
-            name: 'Rishonim Center',
-            wazeUrl: 'https://waze.com/ul?ll=31.984265,34.782318&navigate=yes',
-            mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Rishonim+Center+Rishon+LeZion&query_place_id=ChIJH9xdr3u0AhUR68cOZqcIO_I',
-          },
-        ],
       },
     ],
     scanQR: 'Scan for directions',

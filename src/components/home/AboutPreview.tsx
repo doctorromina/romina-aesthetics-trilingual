@@ -16,11 +16,11 @@ export function AboutPreview() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image */}
           <div className="order-2 lg:order-1 relative flex justify-center">
-            <div className="relative photo-container photo-hover">
+            <div className="relative">
               <img 
                 src="/images/dr-romina-about.jpeg"
                 alt="Dr. Romina Raykhshtat"
-                className="w-[371px] h-[471px] object-cover photo-organic-2 photo-unified photo-reveal"
+                className="w-[371px] h-[471px] object-cover photo-organic-2 shadow-xl"
                 loading="lazy"
               />
             </div>

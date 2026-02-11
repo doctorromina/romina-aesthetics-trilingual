@@ -21,11 +21,11 @@ export function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Image */}
             <div className="order-2 lg:order-1 relative">
-              <div className="aspect-[3/4] relative max-w-md mx-auto photo-container photo-hover">
+              <div className="aspect-[3/4] relative max-w-md mx-auto">
                 <img 
                   src="/images/dr-romina-about.jpeg"
                   alt="Dr. Romina Raykhshtat"
-                  className="w-full h-full object-cover photo-organic-2 photo-unified photo-reveal"
+                  className="w-full h-full object-cover photo-organic-2 shadow-2xl"
                   loading="eager"
                 />
               </div>
@@ -68,11 +68,11 @@ export function AboutPage() {
                   </p>
                 ))}
               </div>
-              <div className="lg:col-span-2 hidden lg:block photo-container photo-hover">
+              <div className="lg:col-span-2 hidden lg:block">
                 <img 
                   src="/images/dr-romina-hero.jpeg"
                   alt="Dr. Romina Raykhshtat"
-                  className="w-full photo-organic-3 photo-unified photo-reveal sticky top-24"
+                  className="w-full photo-organic-3 shadow-lg sticky top-24"
                   loading="lazy"
                 />
               </div>

@@ -409,75 +409,28 @@
   animation: heroCtaAppear 0.6s ease-out 0.8s forwards;
 }
 
-/* ═══ Premium Photo Effects ═══ */
-
-/* Blur-to-sharp reveal for all site images */
-@keyframes imageReveal {
-  0% {
-    filter: blur(8px);
-    opacity: 0;
-    transform: scale(1.02);
-  }
-  100% {
-    filter: blur(0);
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.photo-reveal {
-  animation: imageReveal 1.5s ease-out forwards;
-}
-
-/* Photo container with gradient overlay */
-.photo-container {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.photo-container::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    hsl(var(--background) / 0.25) 0%,
-    transparent 15%,
-    transparent 85%,
-    hsl(var(--background) / 0.25) 100%
-  );
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Desktop hover zoom + shadow */
-@media (hover: hover) {
-  .photo-hover img {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-  }
-  .photo-hover:hover img {
-    transform: scale(1.03);
-    box-shadow: 0 20px 40px hsl(var(--primary) / 0.12);
-  }
-}
-
-/* Unified photo styling */
-.photo-unified {
-  border-radius: 12px;
-  box-shadow: 0 8px 30px hsl(var(--primary) / 0.06);
-}
-
 /* ═══ Hero Fade Masks ═══ */
 
-/* Edge-bleed photo: fade from inline-start edge into background */
-.hero-edge-fade {
-  background: linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.6) 15%, transparent 40%);
+.hero-fade-mask {
+  -webkit-mask-image:
+    linear-gradient(to left, black 60%, transparent 100%),
+    linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+  mask-image:
+    linear-gradient(to left, black 60%, transparent 100%),
+    linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 
-[dir="rtl"] .hero-edge-fade {
-  background: linear-gradient(to left, hsl(var(--background)) 0%, hsl(var(--background) / 0.6) 15%, transparent 40%);
+[dir="rtl"] .hero-fade-mask {
+  -webkit-mask-image:
+    linear-gradient(to right, black 60%, transparent 100%),
+    linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+  mask-image:
+    linear-gradient(to right, black 60%, transparent 100%),
+    linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 
 .hero-fade-mask-mobile {

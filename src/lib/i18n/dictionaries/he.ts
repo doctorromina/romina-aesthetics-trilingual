@@ -11,7 +11,7 @@ export const he = {
   },
   hero: {
     tagline: 'FACE&SMILE AESTHETICS',
-    headline: 'פנים מספרות. אני מקשיבה.',
+    headline: 'הפנים שלך. לא טרנד.',
     subheadline: 'אסתטיקה טבעית בהזרקות עם ד״ר רומינה רייכשטט',
     cta: 'לקביעת ייעוץ',
   },
@@ -191,46 +191,24 @@ export const he = {
   },
   locations: {
     title: 'מיקומי הקליניקות',
-    parking: 'חניה',
     items: [
       {
         name: 'בת ים',
         address: 'רב ניסנבאום 37, בת ים',
         details: 'Uptown Business, קומה 13, חדר 125',
         mapsUrl: 'https://www.google.com/maps/search/רב+ניסנבאום+37+בת+ים',
-        parking: [
-          {
-            name: 'יוחננוף',
-            wazeUrl: 'https://waze.com/ul?ll=32.0135807,34.7516713&navigate=yes',
-            mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Yochananof+Bat+Yam&query_place_id=ChIJDYA4PQ2zAhUR5Zhc6BwkAhE',
-          },
-        ],
       },
       {
         name: 'תל אביב',
         address: 'דרך מנחם בגין 150, תל אביב',
         details: 'We Tower, קומה 6, מרפאת Eco House',
         mapsUrl: 'https://www.google.com/maps/search/דרך+מנחם+בגין+150+תל+אביב',
-        parking: [
-          {
-            name: 'מידטאון',
-            wazeUrl: 'https://waze.com/ul?ll=32.0772344,34.792922&navigate=yes',
-            mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Midtown+Parking+Tel+Aviv&query_place_id=ChIJE0PVsGlLHRURVztXc1E8nfA',
-          },
-        ],
       },
       {
         name: 'ראשון לציון',
         address: 'רוטשילד 78, ראשון לציון',
         details: 'קומה 1, מרפאת שיניים ד״ר דשבסקי',
         mapsUrl: 'https://www.google.com/maps/search/רוטשילד+78+ראשון+לציון',
-        parking: [
-          {
-            name: 'קניון ראשונים',
-            wazeUrl: 'https://waze.com/ul?ll=31.984265,34.782318&navigate=yes',
-            mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Rishonim+Center+Rishon+LeZion&query_place_id=ChIJH9xdr3u0AhUR68cOZqcIO_I',
-          },
-        ],
       },
     ],
     scanQR: 'סרקו לניווט',

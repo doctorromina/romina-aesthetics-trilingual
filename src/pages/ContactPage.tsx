@@ -1,4 +1,4 @@
-import { MapPin, MessageCircle, Send, Map, ParkingCircle } from 'lucide-react';
+import { MapPin, MessageCircle, Send, Map } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { Button } from '@/components/ui/button';
@@ -130,7 +130,7 @@ export function ContactPage() {
                     </p>
 
                     {/* Navigation Buttons */}
-                    <div className="flex gap-2 mb-3">
+                    <div className="flex gap-2 mb-4">
                       <Button
                         asChild
                         variant="outline"
@@ -154,43 +154,6 @@ export function ContactPage() {
                         </a>
                       </Button>
                     </div>
-
-                    {/* Parking Buttons */}
-                    {location.parking && location.parking.length > 0 && (
-                      <div className="mb-4">
-                        <p className="text-xs text-muted-foreground/60 mb-2 text-center flex items-center justify-center gap-1">
-                          <ParkingCircle size={12} />
-                          {t.locations.parking}
-                          {location.parking.length === 1 && `: ${location.parking[0].name}`}
-                        </p>
-                        {location.parking.map((p, pi) => (
-                          <div key={pi} className="flex gap-2 mt-1.5">
-                            <Button
-                              asChild
-                              variant="ghost"
-                              size="sm"
-                              className="flex-1 h-7 text-xs bg-muted/50 hover:bg-muted"
-                            >
-                              <a href={p.mapsUrl} target="_blank" rel="noopener noreferrer">
-                                <Map size={12} className="me-1" />
-                                <span>🅿️ Google</span>
-                              </a>
-                            </Button>
-                            <Button
-                              asChild
-                              variant="ghost"
-                              size="sm"
-                              className="flex-1 h-7 text-xs bg-[#33CCFF]/5 hover:bg-[#33CCFF]/15"
-                            >
-                              <a href={p.wazeUrl} target="_blank" rel="noopener noreferrer">
-                                <WazeLogo size={12} className="me-1 text-[#33CCFF]" />
-                                <span>🅿️ Waze</span>
-                              </a>
-                            </Button>
-                          </div>
-                        ))}
-                      </div>
-                    )}
 
                     {/* QR Code */}
                     <div className="flex flex-col items-center gap-2 pt-4 border-t border-border/30">
