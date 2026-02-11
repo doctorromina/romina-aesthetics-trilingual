@@ -1,15 +1,17 @@
-import { MapPin, Map, ParkingSquare } from 'lucide-react';
-import { QRCodeSVG } from 'qrcode.react';
+import { MapPin, Map, ParkingSquare, ChevronDown, MessageCircle } from 'lucide-react';
+import { useState } from 'react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { Button } from '@/components/ui/button';
 import { WazeLogo } from '@/components/icons/WazeLogo';
 
 export function LocationsSection() {
-  const { t } = useLocale();
+  const { t, whatsAppUrl } = useLocale();
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
     <section className="section-padding bg-background relative overflow-hidden">
-      {/* Accent blob */}
       <div className="absolute top-0 end-0 w-64 h-64 bg-secondary/8 rounded-full blur-3xl pointer-events-none" />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -20,7 +22,6 @@ export function LocationsSection() {
             <div className="w-2 h-2 rounded-full bg-secondary" />
             <div className="w-8 h-px bg-secondary" />
           </div>
-          
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">
             {t.locations.title}
           </h2>
@@ -28,83 +29,105 @@ export function LocationsSection() {
 
         {/* Location Cards */}
         <div className="scroll-reveal-stagger grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {t.locations.items.map((location, index) => (
-            <div 
-              key={index}
-              className="bg-muted/30 rounded-2xl p-6 hover:bg-muted/50 transition-colors border border-border/30"
-            >
-              <div className="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center mx-auto mb-4 border border-secondary/30">
-                <MapPin className="w-5 h-5 text-primary" strokeWidth={1.8} />
-              </div>
-              
-              <h3 className="text-lg font-heading font-semibold text-primary mb-2 text-center">
-                {location.name}
-              </h3>
-              
-              <p className="text-sm text-muted-foreground mb-1 text-center">
-                {location.address}
-              </p>
-              
-              <p className="text-xs text-muted-foreground/80 mb-4 text-center">
-                {location.details}
-              </p>
+          {t.locations.items.map((location, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <div
+                key={index}
+                className="rounded-2xl border border-border/30 bg-background shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                {/* Collapsed — always visible */}
+                <div className="p-6 md:p-8">
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className="w-9 h-9 rounded-full bg-secondary/50 flex items-center justify-center flex-shrink-0 mt-0.5 border border-secondary/30">
+                      <MapPin className="w-4 h-4 text-primary" strokeWidth={1.8} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-[22px] font-heading font-bold text-primary leading-tight">
+                        {location.name}
+                      </h3>
+                      <p className="text-base text-muted-foreground mt-1">
+                        {location.address}
+                      </p>
+                    </div>
+                  </div>
 
-              {/* Clinic Navigation */}
-              <div className="flex gap-2 mb-4">
-                <Button asChild variant="outline" size="sm" className="flex-1">
-                  <a href={location.mapsUrl} target="_blank" rel="noopener noreferrer">
-                    <Map size={14} className="me-1.5" />
-                    <span>Google</span>
-                  </a>
-                </Button>
-                <Button asChild variant="outline" size="sm" className="flex-1 bg-[#33CCFF]/10 border-[#33CCFF]/30 hover:bg-[#33CCFF]/20">
-                  <a href={location.parkingWaze} target="_blank" rel="noopener noreferrer">
-                    <WazeLogo size={14} className="me-1.5 text-[#33CCFF]" />
-                    <span>Waze</span>
-                  </a>
-                </Button>
-              </div>
+                  {/* Clinic nav + WhatsApp */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <Button asChild variant="outline" size="sm" className="text-xs">
+                      <a href={location.mapsUrl} target="_blank" rel="noopener noreferrer">
+                        <Map size={14} className="me-1.5" />
+                        Google Maps
+                      </a>
+                    </Button>
+                    <Button asChild variant="outline" size="sm" className="text-xs bg-[#33CCFF]/8 border-[#33CCFF]/30 hover:bg-[#33CCFF]/15">
+                      <a href={`https://waze.com/ul?q=${encodeURIComponent(location.address)}&navigate=yes`} target="_blank" rel="noopener noreferrer">
+                        <WazeLogo size={14} className="me-1.5 text-[#33CCFF]" />
+                        Waze
+                      </a>
+                    </Button>
+                    <Button asChild variant="outline" size="sm" className="text-xs bg-[#25D366]/8 border-[#25D366]/30 hover:bg-[#25D366]/15">
+                      <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">
+                        <MessageCircle size={14} className="me-1.5 text-[#25D366]" />
+                        WhatsApp
+                      </a>
+                    </Button>
+                  </div>
 
-              {/* Parking */}
-              <div className="border-t border-border/30 pt-3 mb-4">
-                <div className="flex items-center justify-center gap-1.5 mb-2">
-                  <ParkingSquare className="w-3.5 h-3.5 text-muted-foreground" strokeWidth={1.8} />
-                  <span className="text-xs font-medium text-muted-foreground">
-                    {t.locations.parking}: {location.parkingName}
-                  </span>
+                  {/* Expand toggle */}
+                  <button
+                    onClick={() => toggle(index)}
+                    className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                  >
+                    <span>{t.locations.moreDetails}</span>
+                    <ChevronDown
+                      size={16}
+                      strokeWidth={1.8}
+                      className={`transition-transform duration-300 ease-out ${isOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
                 </div>
-                <div className="flex gap-2">
-                  <Button asChild variant="ghost" size="sm" className="flex-1 h-7 text-xs">
-                    <a href={location.parkingMaps} target="_blank" rel="noopener noreferrer">
-                      <Map size={12} className="me-1" />
-                      <span>Google</span>
-                    </a>
-                  </Button>
-                  <Button asChild variant="ghost" size="sm" className="flex-1 h-7 text-xs">
-                    <a href={location.parkingWaze} target="_blank" rel="noopener noreferrer">
-                      <WazeLogo size={12} className="me-1 text-[#33CCFF]" />
-                      <span>Waze</span>
-                    </a>
-                  </Button>
-                </div>
-              </div>
 
-              {/* QR Code */}
-              <div className="flex flex-col items-center gap-2 pt-4 border-t border-border/50">
-                <div className="bg-white p-2 rounded-lg">
-                  <QRCodeSVG 
-                    value={location.mapsUrl} 
-                    size={80}
-                    level="M"
-                    includeMargin={false}
-                  />
+                {/* Expanded content */}
+                <div
+                  className={`grid transition-all duration-300 ease-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-6 md:px-8 pb-6 md:pb-8 pt-0">
+                      <div className="border-t border-border/30 pt-4 space-y-3">
+                        <p className="text-sm text-muted-foreground/80">
+                          {location.expandedDetails}
+                        </p>
+
+                        <div className="flex items-start gap-2.5">
+                          <ParkingSquare className="w-4 h-4 text-muted-foreground mt-0.5 flex-shrink-0" strokeWidth={1.8} />
+                          <div className="space-y-2">
+                            <p className="text-sm font-medium text-primary">
+                              {t.locations.parking}: {location.parkingName}
+                            </p>
+                            <div className="flex gap-2">
+                              <Button asChild variant="outline" size="sm" className="h-7 text-xs">
+                                <a href={location.parkingMaps} target="_blank" rel="noopener noreferrer">
+                                  <Map size={12} className="me-1" />
+                                  Google Maps
+                                </a>
+                              </Button>
+                              <Button asChild variant="outline" size="sm" className="h-7 text-xs bg-[#33CCFF]/8 border-[#33CCFF]/30 hover:bg-[#33CCFF]/15">
+                                <a href={location.parkingWaze} target="_blank" rel="noopener noreferrer">
+                                  <WazeLogo size={12} className="me-1 text-[#33CCFF]" />
+                                  Waze
+                                </a>
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-xs text-muted-foreground/70">
-                  {t.locations.scanQR}
-                </p>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
