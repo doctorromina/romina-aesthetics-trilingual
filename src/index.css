@@ -471,26 +471,13 @@
 
 /* ═══ Hero Fade Masks ═══ */
 
-.hero-fade-mask {
-  -webkit-mask-image:
-    linear-gradient(to left, black 60%, transparent 100%),
-    linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
-  mask-image:
-    linear-gradient(to left, black 60%, transparent 100%),
-    linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
+/* Edge-bleed photo: fade from inline-start edge into background */
+.hero-edge-fade {
+  background: linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.6) 15%, transparent 40%);
 }
 
-[dir="rtl"] .hero-fade-mask {
-  -webkit-mask-image:
-    linear-gradient(to right, black 60%, transparent 100%),
-    linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
-  mask-image:
-    linear-gradient(to right, black 60%, transparent 100%),
-    linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
+[dir="rtl"] .hero-edge-fade {
+  background: linear-gradient(to left, hsl(var(--background)) 0%, hsl(var(--background) / 0.6) 15%, transparent 40%);
 }
 
 .hero-fade-mask-mobile {
