@@ -85,13 +85,13 @@ export function HeroSection() {
             <p 
               className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed hero-text-reveal"
               style={{ animationDelay: '0.5s' }}
-              dangerouslySetInnerHTML={{ 
-                __html: t.hero.subheadline.replace(
-                  /Dr\.\s*Romina(\s*Raykhshtat)?/gi,
-                  (match) => `<span style="white-space: nowrap;">${match.replace(/\s+/g, '\u00A0')}</span>`
-                )
-              }}
-            />
+            >
+              {t.hero.subheadline.split(/(Dr\.\s*Romina(?:\s*Raykhshtat)?)/gi).map((part, i) =>
+                /Dr\.\s*Romina/i.test(part) ? (
+                  <span key={i} className="whitespace-nowrap">{part.replace(/\s+/g, '\u00A0')}</span>
+                ) : part
+              )}
+            </p>
           </div>
 
           {/* Hero Photo — Desktop with parallax & organic blob */}
