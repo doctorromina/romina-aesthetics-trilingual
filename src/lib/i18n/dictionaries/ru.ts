@@ -11,7 +11,7 @@ export const ru = {
   },
   hero: {
     tagline: 'FACE&SMILE AESTHETICS',
-    headline: 'Твоё лицо. Не тренд.',
+    headline: 'Лица говорят. Я слушаю.',
     subheadline: 'Естественная инъекционная эстетика — Dr. Romina Raykhshtat',
     cta: 'Записаться на консультацию',
   },
@@ -191,24 +191,46 @@ export const ru = {
   },
   locations: {
     title: 'Расположение клиник',
+    parking: 'Парковка',
     items: [
       {
         name: 'Бат-Ям',
         address: 'Рав Ниссенбаум 37, Бат-Ям',
         details: 'Uptown Business, этаж 13, комната 125',
         mapsUrl: 'https://www.google.com/maps/search/רב+ניסנבאום+37+בת+ים',
+        parking: [
+          {
+            name: 'Йохананоф',
+            wazeUrl: 'https://waze.com/ul?ll=32.0135807,34.7516713&navigate=yes',
+            mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Yochananof+Bat+Yam&query_place_id=ChIJDYA4PQ2zAhUR5Zhc6BwkAhE',
+          },
+        ],
       },
       {
         name: 'Тель-Авив',
         address: 'Менахем Бегин 150, Тель-Авив',
         details: 'We Tower, этаж 6, клиника Eco House',
         mapsUrl: 'https://www.google.com/maps/search/דרך+מנחם+בגין+150+תל+אביב',
+        parking: [
+          {
+            name: 'Мидтаун',
+            wazeUrl: 'https://waze.com/ul?ll=32.0772344,34.792922&navigate=yes',
+            mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Midtown+Parking+Tel+Aviv&query_place_id=ChIJE0PVsGlLHRURVztXc1E8nfA',
+          },
+        ],
       },
       {
         name: 'Ришон ле-Цион',
         address: 'Ротшильд 78, Ришон ле-Цион',
         details: 'Этаж 1, стоматологическая клиника д-ра Дашевского',
         mapsUrl: 'https://www.google.com/maps/search/רוטשילד+78+ראשון+לציון',
+        parking: [
+          {
+            name: 'Ришоним Центр',
+            wazeUrl: 'https://waze.com/ul?ll=31.984265,34.782318&navigate=yes',
+            mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Rishonim+Center+Rishon+LeZion&query_place_id=ChIJH9xdr3u0AhUR68cOZqcIO_I',
+          },
+        ],
       },
     ],
     scanQR: 'Сканируйте для навигации',
