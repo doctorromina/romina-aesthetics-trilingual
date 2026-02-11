@@ -1,22 +1,10 @@
-import { MapPin, MessageCircle, Send, Map } from 'lucide-react';
+import { MapPin, MessageCircle, Send, Map, ParkingSquare } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { Button } from '@/components/ui/button';
 import { WazeLogo } from '@/components/icons/WazeLogo';
 
 const TELEGRAM_URL = 'https://t.me/+s_aXhLyQXoUzYzg0';
-
-// Generate Waze URL from address
-function getWazeUrl(address: string): string {
-  return `https://waze.com/ul?q=${encodeURIComponent(address)}`;
-}
-
-// Hebrew addresses for Waze navigation
-const wazeAddresses = [
-  'רב ניסנבאום 37, בת ים',
-  'דרך מנחם בגין 150, תל אביב',
-  'רוטשילד 78, ראשון לציון',
-];
 
 export function ContactPage() {
   const { t, whatsAppUrl, locale } = useLocale();
@@ -46,7 +34,7 @@ export function ContactPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-2xl mx-auto space-y-6">
             
-            {/* WhatsApp Card — clean, elegant */}
+            {/* WhatsApp Card */}
             <a
               href={whatsAppUrl}
               target="_blank"
@@ -73,7 +61,7 @@ export function ContactPage() {
               </div>
             </a>
 
-            {/* Telegram Card — RU only, matching style */}
+            {/* Telegram Card — RU only */}
             {locale === 'ru' && (
               <a
                 href={TELEGRAM_URL}
@@ -129,30 +117,44 @@ export function ContactPage() {
                       {location.details}
                     </p>
 
-                    {/* Navigation Buttons */}
+                    {/* Clinic Navigation */}
                     <div className="flex gap-2 mb-4">
-                      <Button
-                        asChild
-                        variant="outline"
-                        size="sm"
-                        className="flex-1"
-                      >
+                      <Button asChild variant="outline" size="sm" className="flex-1">
                         <a href={location.mapsUrl} target="_blank" rel="noopener noreferrer">
                           <Map size={14} className="me-1.5" />
                           <span>Google</span>
                         </a>
                       </Button>
-                      <Button
-                        asChild
-                        variant="outline"
-                        size="sm"
-                        className="flex-1 bg-[#33CCFF]/10 border-[#33CCFF]/30 hover:bg-[#33CCFF]/20"
-                      >
-                        <a href={getWazeUrl(wazeAddresses[index])} target="_blank" rel="noopener noreferrer">
+                      <Button asChild variant="outline" size="sm" className="flex-1 bg-[#33CCFF]/10 border-[#33CCFF]/30 hover:bg-[#33CCFF]/20">
+                        <a href={location.parkingWaze} target="_blank" rel="noopener noreferrer">
                           <WazeLogo size={14} className="me-1.5 text-[#33CCFF]" />
                           <span>Waze</span>
                         </a>
                       </Button>
+                    </div>
+
+                    {/* Parking */}
+                    <div className="border-t border-border/30 pt-3 mb-4">
+                      <div className="flex items-center justify-center gap-1.5 mb-2">
+                        <ParkingSquare className="w-3.5 h-3.5 text-muted-foreground" strokeWidth={1.8} />
+                        <span className="text-xs font-medium text-muted-foreground">
+                          {t.locations.parking}: {location.parkingName}
+                        </span>
+                      </div>
+                      <div className="flex gap-2">
+                        <Button asChild variant="ghost" size="sm" className="flex-1 h-7 text-xs">
+                          <a href={location.parkingMaps} target="_blank" rel="noopener noreferrer">
+                            <Map size={12} className="me-1" />
+                            <span>Google</span>
+                          </a>
+                        </Button>
+                        <Button asChild variant="ghost" size="sm" className="flex-1 h-7 text-xs">
+                          <a href={location.parkingWaze} target="_blank" rel="noopener noreferrer">
+                            <WazeLogo size={12} className="me-1 text-[#33CCFF]" />
+                            <span>Waze</span>
+                          </a>
+                        </Button>
+                      </div>
                     </div>
 
                     {/* QR Code */}
